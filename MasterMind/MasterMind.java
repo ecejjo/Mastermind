@@ -7,10 +7,13 @@ public class MasterMind {
     private ProposedCombination[] proposedCombinations;
 	
 	public static final int MAX_PROPOSED_COMBINATIONS = 10;
+	
+	private ReadController readController;
                 
     public MasterMind() {
     	secretCombination = new SecretCombination();
     	proposedCombinations = new ProposedCombination[MAX_PROPOSED_COMBINATIONS];
+    	readController = new ReadController(secretCombination, proposedCombinations);
     }
     
     public void play() {
@@ -18,11 +21,8 @@ public class MasterMind {
     	do
     	{
     		this.print();
-    		ProposedCombination proposedCombination = new ProposedCombination();
-    		this.proposedCombinations[current] = proposedCombination;
-    		this.proposedCombinations[current].read();
-    		this.proposedCombinations[current].calculateResult(secretCombination);
-    		
+    		readController.setProposedCombinationsIndex(current);
+    		readController.control();    		
     		current ++;
     	}
     	while ( ! proposedCombinations[current - 1].isWinner() && current < MAX_PROPOSED_COMBINATIONS);
