@@ -10,9 +10,9 @@ public class Game {
 	private SecretCombination secretCombination;
 	
     private ProposedCombination[] proposedCombinations;
-    private int proposedCombinationsCounter;
+    private int tries;
 	
-	public static final int MAX_PROPOSED_COMBINATIONS = 10;
+	public static final int MAX_TRIES = 10;
 
 	
 	public Game() {
@@ -21,10 +21,10 @@ public class Game {
 	
 	public void read() {
 		ProposedCombination proposedCombination = new ProposedCombination();
-		this.proposedCombinations[proposedCombinationsCounter] = proposedCombination;
-		this.proposedCombinations[proposedCombinationsCounter].read();
-		this.proposedCombinations[proposedCombinationsCounter].calculateResult(secretCombination);
-		proposedCombinationsCounter ++;		
+		this.proposedCombinations[tries] = proposedCombination;
+		this.proposedCombinations[tries].read();
+		this.proposedCombinations[tries].calculateResult(secretCombination);
+		tries ++;		
 	}
 	
 	public State getState() {
@@ -38,16 +38,16 @@ public class Game {
 	public void clear() {
 		state = State.INITIAL;
     	secretCombination = new SecretCombination();
-    	proposedCombinations = new ProposedCombination[MAX_PROPOSED_COMBINATIONS];
-    	proposedCombinationsCounter = 0;		
+    	proposedCombinations = new ProposedCombination[MAX_TRIES];
+    	tries = 0;		
 	}
 
 	public boolean isWinner() {
-		return proposedCombinations[proposedCombinationsCounter - 1].isWinner();
+		return proposedCombinations[tries - 1].isWinner();
 	}
 	
 	public boolean moreTries() {
-		return proposedCombinationsCounter < MAX_PROPOSED_COMBINATIONS;
+		return tries < MAX_TRIES;
 	}
 
 	public void print() {

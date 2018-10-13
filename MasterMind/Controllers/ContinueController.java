@@ -8,7 +8,6 @@ public class ContinueController extends Controller {
 
 	protected ContinueController(Game game) {
 		super(game);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -20,6 +19,7 @@ public class ContinueController extends Controller {
 		do {
 			answer = io.readChar("Play again? (s/n): ");
 		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
+		
 		if (answer == 's') {
 			this.clear();
 			this.setState(State.INITIAL);

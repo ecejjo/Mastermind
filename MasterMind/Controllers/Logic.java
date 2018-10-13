@@ -21,16 +21,15 @@ public class Logic {
 
 	public Controller getController() {
 		switch (game.getState()) {
-		case INITIAL:
+			case INITIAL:
 			return startController;
-		case PLAYING:
+			case PLAYING:
 			return readController;
-		case FINAL:
+			case FINAL:
 			return continueController;
-		case EXIT:
-		default:
+			case EXIT:
+			default:
 			return null;
 		}
 	}
-	
 }

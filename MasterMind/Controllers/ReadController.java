@@ -13,22 +13,20 @@ public class ReadController extends Controller {
 	public void control() {
 		assert this.getState() == State.PLAYING;
 
-		this.getGame().read();
-		
-		this.getGame().print();
+		this.read();
+		this.print();
 		
     	if (this.isWinner())
     	{
     		IO io = new IO();		
     		io.write("Matches. You win!!");
-    		this.getGame().setState(State.FINAL);
+    		this.setState(State.FINAL);
     	}
     	else if (! this.moreTries())
     	{
     		IO io = new IO();		
     		io.write("End of tries. You loose!!");
-    		this.getGame().setState(State.FINAL);
-    		return;
+    		this.setState(State.FINAL);
     	}
 	}	
 }

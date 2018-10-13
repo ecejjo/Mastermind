@@ -11,7 +11,7 @@ public class StartController extends Controller {
 
 	public void control() {
 		assert this.getState() == State.INITIAL;
-		this.print();
 		this.setState(State.PLAYING);
+		this.print();
 	}
 }
