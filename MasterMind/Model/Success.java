@@ -24,8 +24,4 @@ public enum Success {
 		this.value = value;
 	}
 
-	public void print() {
-		IO io = new IO();
-		io.write(this.toString());		
-	}
 }

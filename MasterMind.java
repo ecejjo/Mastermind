@@ -1,21 +1,25 @@
 
-import MasterMind.Controllers.Controller;
 import MasterMind.Controllers.Logic;
+import MasterMind.Controllers.OperationController;
+import Views.MasterMindView;
 
 public class MasterMind {
 	
 	private Logic logic;
 	
+	private MasterMindView view;
+	
 	public MasterMind() {
 		logic = new Logic();
+		view = new MasterMindView();
 	}           
     
     public void play() {    	
-    	Controller controller;
+    	OperationController controller;
 		do {
 			controller = logic.getController();
 			if (controller != null) {
-				controller.control();
+				view.interact(controller);
 			}
 		} while (controller != null);		
     }

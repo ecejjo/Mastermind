@@ -1,6 +1,8 @@
 package MasterMind.Controllers;
 
 import MasterMind.Model.Game;
+import MasterMind.Model.ProposedCombination;
+import MasterMind.Model.SecretCombination;
 import MasterMind.Model.State;
 
 public abstract class Controller {
@@ -11,9 +13,7 @@ public abstract class Controller {
 		assert game != null;
 		this.game = game;
 	}
-	
-	public abstract void control();
-	
+		
 	protected State getState(){
 		return game.getState();
 	}
@@ -23,28 +23,33 @@ public abstract class Controller {
 		game.setState(state);
 	}
 
-	protected void print() {
-		game.print();		
-	}
-
 	protected void clear() {
 		game.clear();		
 	}
 	
-	protected boolean isWinner() {
+	public boolean isWinner() {
 		return game.isWinner();
 	}
 	
 	public boolean moreTries() {
 		return game.moreTries();
 	}	
-	
-	protected void read() {
-		game.read();
-	}
-	
+		
 	protected Game getGame(){
 		return game;
 	}
+	
+	public SecretCombination getSecretCombination() {
+		return game.getSecretCombination();
+	}
+
+	public ProposedCombination[] getProposedCombinations() {
+		return game.getProposedCombinations();
+	}
+	
+	public void add(ProposedCombination proposedCombination) {
+		game.add(proposedCombination);
+	}
+
 
 }

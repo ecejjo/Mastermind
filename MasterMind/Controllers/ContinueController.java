@@ -4,21 +4,18 @@ import MasterMind.Model.Game;
 import MasterMind.Model.State;
 import MasterMind.Util.IO;
 
-public class ContinueController extends Controller {
+public class ContinueController extends OperationController {
 
 	protected ContinueController(Game game) {
 		super(game);
 	}
 
-	@Override
-	public void control() {
+	public void start() {
 		assert this.getState() == State.FINAL;
-		
-		IO io = new IO();
-		char answer;
-		do {
-			answer = io.readChar("Play again? (s/n): ");
-		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
+	}
+	
+	public void end(char answer) {
+		assert this.getState() == State.FINAL;
 		
 		if (answer == 's') {
 			this.clear();
@@ -27,4 +24,10 @@ public class ContinueController extends Controller {
 			this.setState(State.EXIT);
 		}		
 	}
+	
+	@Override
+	public void accept(OperationControllerVisitor operationControllerVisitor) {
+		operationControllerVisitor.visit(this);		
+	}
+
 }

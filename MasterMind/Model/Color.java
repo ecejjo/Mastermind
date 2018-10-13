@@ -29,11 +29,6 @@ public enum Color {
 		return this.ordinal();
 	}
 
-	public void print() {
-		IO io = new IO();
-		io.write(String.valueOf(getValue()));
-	}
-
 	public boolean isIncluded(Color[] color) {
 		for (int i = 0; i < color.length; i++) {
 			if (this.value == color[i].value) {

@@ -10,12 +10,6 @@ public class ProposedCombination extends Combination {
 		super();
 		result = new Result();
 	}
-
-	public void read() {
-		for (int i = 0; i < colors.length; i++) {
-			colors[i] = LimitedCharDialog.readColor();			
-		}
-	}
 	
 	public void calculateResult(Combination secretCombination) {
 				
@@ -25,7 +19,7 @@ public class ProposedCombination extends Combination {
 								
 		for (int i = 0; i < colors.length; i++) {
 			if (thisColors[i].toInt() == auxSecretCombination.colors[i].toInt()) {
-				this.result.add(Success.BLACK);
+				this.getResult().add(Success.BLACK);
 				thisColors[i] = Color.NONE;
 				auxSecretCombination.colors[i] = Color.NONE;
 			}
@@ -36,17 +30,16 @@ public class ProposedCombination extends Combination {
 				continue;
 			}
 			if (thisColors[i].isIncluded(auxSecretCombination.getColors())) {
-				this.result.add(Success.WHITE);
+				this.getResult().add(Success.WHITE);
 			}
 		}
 	}
 
-	public void print() {
-		super.print();
-		result.print();
+	public boolean isWinner() {
+		return getResult().isWinner();
 	}
 
-	public boolean isWinner() {
-		return result.isWinner();
+	public Result getResult() {
+		return result;
 	}
 }

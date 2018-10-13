@@ -26,12 +26,6 @@ public class Combination {
 		}
 		return copy;
 	}
-
-	public void print() {
-		for (int i = 0; i < colors.length; i++) {
-			colors[i].print();
-		}
-	}
 	
 	public Color[] getColors() {
 		return colors;

@@ -1,7 +1,5 @@
 package MasterMind.Model;
 
-import MasterMind.Util.IO;
-
 public class Result {
 	
 	public static final int COMBINATION_LENGTH = 4;
@@ -30,15 +28,4 @@ public class Result {
 		return true;
 	}
 
-	public void print() {
-		
-		IO io = new IO();
-		io.write(" - Result is: ");		
-
-		for (int i = 0; i < this.success.length; i++) {
-			if (!(this.success[i] == null)) {
-				this.success[i].print();	
-			}
-		}		
-	}
 }
