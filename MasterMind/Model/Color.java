@@ -1,7 +1,5 @@
 package MasterMind.Model;
 
-import MasterMind.Util.IO;
-
 public enum Color {
 	RED('R'),
 	GREEN('G'),

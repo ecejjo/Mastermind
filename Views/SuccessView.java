@@ -7,13 +7,13 @@ public class SuccessView {
 	
 	Success success;
 	
-	SuccessView (Success success) {
+	public SuccessView (Success success) {
 		this.success = success;
 	}
 
 	public void print() {
 		IO io = new IO();
-		io.write(this.toString());		
+		io.write(this.success.toString());		
 	}
 
 }

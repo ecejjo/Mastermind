@@ -1,7 +1,5 @@
 package MasterMind.Model;
 
-import MasterMind.Util.IO;
-
 public enum Success {
 	WHITE('W'),
 	BLACK('B');

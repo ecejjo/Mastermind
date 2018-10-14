@@ -2,14 +2,18 @@ package MasterMind.Controllers;
 
 import MasterMind.Model.Game;
 import MasterMind.Model.State;
-import MasterMind.Util.IO;
 
 public class ContinueController extends OperationController {
 
 	protected ContinueController(Game game) {
 		super(game);
 	}
-
+	
+	@Override
+	public void accept(OperationControllerVisitor operationControllerVisitor) {
+		operationControllerVisitor.visit(this);		
+	}
+	
 	public void start() {
 		assert this.getState() == State.FINAL;
 	}
@@ -24,10 +28,4 @@ public class ContinueController extends OperationController {
 			this.setState(State.EXIT);
 		}		
 	}
-	
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
-	}
-
 }

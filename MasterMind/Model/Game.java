@@ -52,4 +52,8 @@ public class Game {
 		tries ++;
 	}
 
+	public void calculateResult() {
+		this.proposedCombinations[tries - 1].calculateResult(secretCombination);
+	}
+
 }

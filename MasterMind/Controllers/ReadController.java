@@ -23,6 +23,10 @@ public class ReadController extends OperationController {
 		this.getGame().add(proposedCombination);
 	}
 	
+	public void calculateResult() {
+		this.getGame().calculateResult();
+	}
+	
 	public void end() {
 		this.setState(State.FINAL);
 	}

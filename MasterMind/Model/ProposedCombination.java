@@ -1,7 +1,5 @@
 package MasterMind.Model;
 
-import MasterMind.Util.LimitedCharDialog;
-
 public class ProposedCombination extends Combination {
 		
 	private Result result;
@@ -13,6 +11,8 @@ public class ProposedCombination extends Combination {
 	
 	public void calculateResult(Combination secretCombination) {
 				
+		this.getResult().clear();
+		
 		Combination auxSecretCombination = new Combination();
 		auxSecretCombination = secretCombination.copy();
 		Color[] thisColors = this.copy().colors;

@@ -2,6 +2,7 @@ package Views;
 
 import MasterMind.Model.Color;
 import MasterMind.Model.ProposedCombination;
+import MasterMind.Util.IO;
 
 public class ProposedCombinationView {
 	
@@ -34,11 +35,8 @@ public class ProposedCombinationView {
 			new ColorView(proposedCombination.getColors()[i]).print();
 		}
 		
-		for (int i = 0; i < proposedCombination.getResult().success.length; i++) {
-			if (!(proposedCombination.getResult().success[i] == null)) {
-				new SuccessView(proposedCombination.getResult().success[i]).print();	
-			}
-		}
+		IO io = new IO();
+		io.write(" - Result: ");
+		new ResultView(proposedCombination.getResult()).print();
 	}
-
 }

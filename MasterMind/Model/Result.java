@@ -8,7 +8,14 @@ public class Result {
 	
 	public Result ()
 	{
+		this.clear();
+	}
+	
+	public void clear() {
 		this.success = new Success[COMBINATION_LENGTH];
+		for (int i = 0; i < this.success.length; i++) {
+			this.success[i] = null;
+		}
 	}
 	
 	public void add(Success newItem) {
@@ -27,5 +34,4 @@ public class Result {
 		}
 		return true;
 	}
-
 }

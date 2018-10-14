@@ -5,7 +5,6 @@ import MasterMind.Controllers.OperationController;
 import MasterMind.Controllers.OperationControllerVisitor;
 import MasterMind.Controllers.ReadController;
 import MasterMind.Controllers.StartController;
-import MasterMind.Model.ProposedCombination;
 import MasterMind.Util.IO;
 
 public class MasterMindView implements OperationControllerVisitor {
@@ -18,7 +17,6 @@ public class MasterMindView implements OperationControllerVisitor {
 	@Override
 	public void visit(StartController startController) {
 		startController.start();
-		new GameView(startController).print();
 	}
 
 	@Override
@@ -26,22 +24,22 @@ public class MasterMindView implements OperationControllerVisitor {
 		readController.start();
 		new GameView(readController).print();
 		
-		Views.ProposedCombinationView proposedCombinationView = new ProposedCombinationView();
+		ProposedCombinationView proposedCombinationView = new ProposedCombinationView();
 		readController.add(proposedCombinationView.read());
+		readController.calculateResult();
 				
     	if (readController.isWinner())
     	{
     		IO io = new IO();		
-    		io.write("Matches. You win!!");
+    		io.writeln("Matches. You win!!");
     		readController.end();
     	}
     	else if (! readController.moreTries())
     	{
     		IO io = new IO();		
-    		io.write("End of tries. You loose!!");
+    		io.writeln("End of tries. You loose!!");
     		readController.end();
-    	}
-		
+    	}	
 	}
 
 	@Override
@@ -55,7 +53,5 @@ public class MasterMindView implements OperationControllerVisitor {
 		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
 		
 		continueController.end(answer);
-		
 	}
-
 }
