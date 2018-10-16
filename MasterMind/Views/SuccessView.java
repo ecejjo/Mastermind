@@ -1,4 +1,4 @@
-package Views;
+package MasterMind.Views;
 
 import MasterMind.Model.Success;
 import MasterMind.Util.IO;

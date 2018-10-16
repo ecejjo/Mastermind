@@ -1,4 +1,4 @@
-package Views;
+package MasterMind.Views;
 
 import MasterMind.Controllers.ContinueController;
 import MasterMind.Controllers.OperationController;

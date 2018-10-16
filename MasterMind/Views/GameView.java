@@ -1,4 +1,4 @@
-package Views;
+package MasterMind.Views;
 
 import MasterMind.Controllers.OperationController;
 import MasterMind.Util.IO;

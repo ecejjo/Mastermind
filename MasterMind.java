@@ -1,7 +1,7 @@
 
 import MasterMind.Controllers.Logic;
 import MasterMind.Controllers.OperationController;
-import Views.MasterMindView;
+import MasterMind.Views.MasterMindView;
 
 public class MasterMind {
 	
