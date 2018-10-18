@@ -10,8 +10,8 @@ public class StartController extends OperationController {
 	}
 	
 	public void start() {
-		assert this.getState() == State.INITIAL;
-		this.setState(State.PLAYING);
+		assert this.game.getState() == State.INITIAL;
+		this.game.setState(State.PLAYING);
 	}
 	
 	@Override

@@ -15,17 +15,17 @@ public class ContinueController extends OperationController {
 	}
 	
 	public void start() {
-		assert this.getState() == State.FINAL;
+		assert this.game.getState() == State.FINAL;
 	}
 	
 	public void end(char answer) {
-		assert this.getState() == State.FINAL;
+		assert this.game.getState() == State.FINAL;
 		
 		if (answer == 's') {
-			this.clear();
-			this.setState(State.INITIAL);
+			this.game.clear();
+			this.game.setState(State.INITIAL);
 		} else {
-			this.setState(State.EXIT);
+			this.game.setState(State.EXIT);
 		}		
 	}
 }

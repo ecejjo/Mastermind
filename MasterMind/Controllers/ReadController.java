@@ -16,19 +16,27 @@ public class ReadController extends OperationController {
 	}
 	
 	public void start() {
-		assert this.getState() == State.PLAYING;
+		assert this.game.getState() == State.PLAYING;
 	}
 	
 	public void add(ProposedCombination proposedCombination) {
-		this.getGame().add(proposedCombination);
+		this.game.add(proposedCombination);
 	}
 	
 	public void calculateResult() {
-		this.getGame().calculateResult();
+		this.game.calculateResult();
+	}
+	
+	public boolean isWinner() {
+		return game.isWinner();
+	}
+	
+	public boolean moreTries() {
+		return game.moreTries();
 	}
 	
 	public void end() {
-		this.setState(State.FINAL);
+		this.game.setState(State.FINAL);
 	}
 
 }
