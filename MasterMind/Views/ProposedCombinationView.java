@@ -22,7 +22,7 @@ public class ProposedCombinationView {
 		
 		Color[] colors = proposedCombination.getColors();
 		for (int i = 0; i < colors.length; i++) {
-			colors[i] = new ColorView().read();	
+			colors[i] = new ColorView().readColor();	
 		}
 		
 		proposedCombination.setColors(colors);

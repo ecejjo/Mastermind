@@ -13,23 +13,22 @@ public class ProposedCombination extends Combination {
 				
 		this.getResult().clear();
 		
-		Combination auxSecretCombination = new Combination();
-		auxSecretCombination = secretCombination.copy();
-		Color[] thisColors = this.copy().colors;
+		Combination auxSecretCombination = new Combination(secretCombination);
+		Combination auxThisCombination = new Combination(this);
 								
 		for (int i = 0; i < colors.length; i++) {
-			if (thisColors[i].toInt() == auxSecretCombination.colors[i].toInt()) {
+			if (auxThisCombination.colors[i].getValue() == auxSecretCombination.colors[i].getValue()) {
 				this.getResult().add(Success.BLACK);
-				thisColors[i] = Color.NONE;
+				auxThisCombination.colors[i] = Color.NONE;
 				auxSecretCombination.colors[i] = Color.NONE;
 			}
 		}
 				
 		for (int i = 0; i < colors.length; i++) {
-			if (thisColors[i] == Color.NONE) {
+			if (auxThisCombination.colors[i] == Color.NONE) {
 				continue;
 			}
-			if (thisColors[i].isIncluded(auxSecretCombination.getColors())) {
+			if (auxThisCombination.colors[i].isIncluded(auxSecretCombination.getColors())) {
 				this.getResult().add(Success.WHITE);
 			}
 		}

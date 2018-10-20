@@ -26,6 +26,19 @@ public enum Color {
 	public int toInt() {
 		return this.ordinal();
 	}
+	
+	public static Color getColor(char inChar) {
+		switch (inChar) {
+			case 'R': return Color.RED;
+			case 'G': return Color.GREEN;
+			case 'Y': return Color.YELLOW;
+			case 'P': return Color.PINK;
+			case 'B': return Color.BLACK;
+			case 'W': return Color.WHITE;
+			case '_': return Color.NONE;
+		}
+		return Color.NONE;
+	}
 
 	public boolean isIncluded(Color[] color) {
 		for (int i = 0; i < color.length; i++) {

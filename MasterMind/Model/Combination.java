@@ -18,14 +18,6 @@ public class Combination {
 		}
 
 	}
-
-	public Combination copy () {
-		Combination copy = new Combination();		
-		for (int i = 0; i < this.colors.length; i++) {
-			copy.colors[i] = this.colors[i];
-		}
-		return copy;
-	}
 	
 	public Color[] getColors() {
 		return colors;

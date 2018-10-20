@@ -1,55 +1,45 @@
 package MasterMind.Util;
 
-import java.util.ArrayList;
-
-import MasterMind.Model.Color;
-
 public class LimitedCharDialog {
 
 	private String title;
+	private String charInterval;
 	
-	private ArrayList <Character> charList;
+	private char[] charList;
 	
-	public LimitedCharDialog(String title, ArrayList <Character> charList){
+	public LimitedCharDialog(String title, char[] charList){
 		assert title != null;
-		this.title = title + " " + charList + ": ";
+		this.title = title;
 		this.charList = charList;
+		
+		this.charInterval = " [";
+		for (int i = 0; i < charList.length; i++) {
+			this.charInterval += charList[i] + ", ";
+		}
+		
+		this.charInterval = this.charInterval.trim();
+	    this.charInterval = this.charInterval.substring(0, this.charInterval.length() - 1) + "]";
 	}
 
 
 	public char read(){
 		IO io = new IO();
 		char value;
-		boolean ok;
+		boolean ok = false;
 		do {
-			value = io.readChar(title);
-			ok = charList.contains(value);
+			value = io.readChar(title + " " + charInterval + ": ");
+			
+			for (int i = 0; i < charList.length; i++) {
+			    if (charList[i] == value) {
+			        ok = true;
+			        break;
+			    }
+			}
+
 			if (!ok) {
-				io.writeln("Error. Input character must be in: " + charList);
+				io.writeln("Error. Input character must be in: " + this.charInterval);
 			}
 		} while (!ok);
 		return value;
-	}
-
-	static public Color readColor() {
-		
-		ArrayList <Character> charList = new ArrayList<>();
-		for (int i = 0; i < Color.values().length - 1; i++) {
-			charList.add(Color.values()[i].getValue());	
-		}
-		
-		LimitedCharDialog limitedCharDialog = new LimitedCharDialog(" - Input char", charList);
-		// return Color(limitedCharDialog.read());
-		
-		switch (limitedCharDialog.read()) {
-			case 'R': return Color.RED;
-			case 'G': return Color.GREEN;
-			case 'Y': return Color.YELLOW;
-			case 'P': return Color.PINK;
-			case 'B': return Color.BLACK;
-			case 'W': return Color.WHITE;
-			case '_': return Color.NONE;
-		}
-		return null;	
 	}
 }
