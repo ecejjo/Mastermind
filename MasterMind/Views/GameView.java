@@ -5,15 +5,15 @@ import MasterMind.Util.IO;
 
 public class GameView {
 	
-	private OperationController controller;
-
+	private  OperationController controller;
+	private IO io = new IO();
+	
 	public GameView(OperationController controller) {
-			assert controller != null;
-			this.controller = controller;
+		assert controller != null;
+		this.controller = controller;
 	}
-
+	
 	public void print() {
-		IO io = new IO();		
 		io.write("Secret: ");
 		new SecretCombinationView(controller.getSecretCombination()).print();
 		io.writeln();

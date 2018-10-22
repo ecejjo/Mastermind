@@ -4,7 +4,7 @@ public interface OperationControllerVisitor {
 	
 	void visit(StartController startController);
 	
-	void visit(ReadController redController);
+	void visit(ReadController readController);
 	
 	void visit(ContinueController continueController);
 
