@@ -24,7 +24,7 @@ public class ProposedCombination extends Combination {
 		Color[] thisColors = this.copy().colors;
 								
 		for (int i = 0; i < colors.length; i++) {
-			if (thisColors[i].toInt() == auxSecretCombination.colors[i].toInt()) {
+			if (thisColors[i].getValue() == auxSecretCombination.colors[i].getValue()) {
 				this.result.add(Success.BLACK);
 				thisColors[i] = Color.NONE;
 				auxSecretCombination.colors[i] = Color.NONE;
