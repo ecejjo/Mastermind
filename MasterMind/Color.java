@@ -1,5 +1,8 @@
 package MasterMind;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum Color {
 	RED('R'),
 	GREEN('G'),
@@ -11,27 +14,31 @@ public enum Color {
 				
 	private char value;
 	
+    private static final Map <Character, Color> lookup = new HashMap<Character, Color>();
+    
 	Color(char value){
 		this.setValue(value);
 	}
-	
-	public String toString() {
-		return ""+getValue();
-	}
-	
+
+    static {
+        for (Color c : Color.values()) {
+            lookup.put(c.getValue(), c);
+        }
+    }
+    		
+	public static Color getColor(char inChar) {
+        return lookup.get(inChar);
+    }
+		
 	public static Color getRandomColor(){
 	    return Color.values()[(int) (Math.random()*(Color.values().length -1))];
 	}
 	
-	public int toInt() {
-		return this.ordinal();
-	}
-
 	public void print() {
 		IO io = new IO();
 		io.write(String.valueOf(getValue()));
 	}
-
+		
 	public boolean isIncluded(Color[] color) {
 		for (int i = 0; i < color.length; i++) {
 			if (this.value == color[i].value) {
