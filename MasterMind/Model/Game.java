@@ -1,6 +1,6 @@
 package MasterMind.Model;
 
-public class Game implements Cloneable {
+public class Game {
 	
 	private State state;
 	
@@ -71,9 +71,5 @@ public class Game implements Cloneable {
 	public void calculateResult() {
 		this.proposedCombinations[tries - 1].calculateResult(secretCombination);
 	}
-	
-	public Game clone() throws CloneNotSupportedException {
-        return (Game) super.clone();
-    }
 
 }

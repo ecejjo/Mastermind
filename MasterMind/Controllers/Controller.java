@@ -21,7 +21,7 @@ public abstract class Controller {
 		return game.getProposedCombinations();
 	}
 	
-	public Memento saveToMemento() throws CloneNotSupportedException 
+	public Memento saveToMemento() 
     {
 		Game gameToSave = new Game(game);
         return new Memento(gameToSave); 

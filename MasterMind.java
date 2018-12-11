@@ -14,7 +14,7 @@ public class MasterMind {
 		view = new MasterMindView();
 	}           
     
-    public void play() throws CloneNotSupportedException {    	
+    public void play() {    	
     	OperationController controller;
 		do {
 			controller = logic.getController();
@@ -25,7 +25,7 @@ public class MasterMind {
 		} while (controller != null);		
     }
         
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) {
         new MasterMind().play();
     }
 }

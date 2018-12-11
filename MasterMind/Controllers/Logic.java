@@ -36,7 +36,7 @@ public class Logic {
 		}
 	}
 	
-	public void saveGame(OperationController controller) throws CloneNotSupportedException {
+	public void saveGame(OperationController controller) {
 		this.careTaker.add(controller.saveToMemento());
 	}
 }
