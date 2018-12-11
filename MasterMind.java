@@ -21,7 +21,6 @@ public class MasterMind {
 			if (controller != null) {
 				view.interact(controller);
 			}
-		    logic.saveGame(controller);
 		} while (controller != null);		
     }
         

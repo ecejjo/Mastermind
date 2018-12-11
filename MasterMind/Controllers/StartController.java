@@ -11,9 +11,10 @@ public class StartController extends OperationController {
 	
 	public void start() {
 		assert this.game.getState() == State.INITIAL;
-		this.game.setState(State.PLAYING);
+		this.game.setState(State.MENU);
+		this.game.careTaker.add(this.saveToMemento());
 	}
-	
+		
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		

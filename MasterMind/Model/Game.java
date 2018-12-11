@@ -1,5 +1,7 @@
 package MasterMind.Model;
 
+import MasterMind.Controllers.CareTaker;
+
 public class Game {
 	
 	private State state;
@@ -11,7 +13,8 @@ public class Game {
     private int tries;
 	
 	public static final int MAX_TRIES = 10;
-
+	
+	public CareTaker careTaker;
 	
 	public Game() {
 		this.clear();
@@ -44,7 +47,8 @@ public class Game {
 		state = State.INITIAL;
     	secretCombination = new SecretCombination();
     	proposedCombinations = new ProposedCombination[MAX_TRIES];
-    	tries = 0;		
+    	tries = 0;
+		careTaker = new CareTaker();
 	}
 
 	public boolean isWinner() {

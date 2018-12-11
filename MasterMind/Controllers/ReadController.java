@@ -27,6 +27,10 @@ public class ReadController extends OperationController {
 		this.game.calculateResult();
 	}
 	
+	public void saveGame() {
+		this.game.careTaker.add(this.saveToMemento());
+	}
+	
 	public boolean isWinner() {
 		return game.isWinner();
 	}
@@ -35,8 +39,11 @@ public class ReadController extends OperationController {
 		return game.moreTries();
 	}
 	
+	public void done() {
+		this.game.setState(State.MENU);
+	}	
+	
 	public void end() {
 		this.game.setState(State.FINAL);
-	}
-
+	}	
 }

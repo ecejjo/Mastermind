@@ -29,6 +29,6 @@ public abstract class Controller {
 
     public void restoreFromMemento(Memento m) 
     {
-        game = m.getSavedState(); 
+        game = m.getSavedState();
     }
 }

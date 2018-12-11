@@ -4,11 +4,11 @@ import MasterMind.Model.Game;
 
 public class Logic {
 	
-	private Game game;
-	
-	public CareTaker careTaker; 
+	private Game game; 
 	
 	private StartController startController;
+	
+	private MenuController menuController;
 	
 	private ReadController readController;
 
@@ -16,8 +16,8 @@ public class Logic {
 	
 	public Logic() {
 		game = new Game();
-	    careTaker = new CareTaker();
 		startController = new StartController(game);
+		menuController = new MenuController(game);
 		readController = new ReadController(game);
 		continueController = new ContinueController(game);
 	}
@@ -26,6 +26,8 @@ public class Logic {
 		switch (game.getState()) {
 			case INITIAL:
 			return startController;
+			case MENU:
+			return menuController;
 			case PLAYING:
 			return readController;
 			case FINAL:
@@ -34,9 +36,5 @@ public class Logic {
 			default:
 			return null;
 		}
-	}
-	
-	public void saveGame(OperationController controller) {
-		this.careTaker.add(controller.saveToMemento());
-	}
+	}	
 }

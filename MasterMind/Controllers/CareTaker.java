@@ -20,4 +20,14 @@ public class CareTaker {
 	{
 		return savedGames.get(index);
 	}
+	
+	public boolean isPenultimate()
+	{
+		return (savedGames.size() >= 2);
+	}
+	
+	public Memento getPenultimate()
+	{
+		return savedGames.get(savedGames.size() - 2);
+	}
 }
