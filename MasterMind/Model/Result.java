@@ -11,6 +11,11 @@ public class Result {
 		this.clear();
 	}
 	
+	public Result (Result result)
+	{
+		this.success = result.success;
+	}
+	
 	public void clear() {
 		this.success = new Success[COMBINATION_LENGTH];
 		for (int i = 0; i < this.success.length; i++) {

@@ -9,6 +9,15 @@ public class ProposedCombination extends Combination {
 		result = new Result();
 	}
 	
+	public ProposedCombination (ProposedCombination proposedCombination) {
+		super(proposedCombination);
+		
+		if (proposedCombination != null) {
+			result = new Result(proposedCombination.result);
+		}
+	}
+
+	
 	public void calculateResult(Combination secretCombination) {
 				
 		this.getResult().clear();

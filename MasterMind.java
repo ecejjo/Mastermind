@@ -14,17 +14,18 @@ public class MasterMind {
 		view = new MasterMindView();
 	}           
     
-    public void play() {    	
+    public void play() throws CloneNotSupportedException {    	
     	OperationController controller;
 		do {
 			controller = logic.getController();
 			if (controller != null) {
 				view.interact(controller);
 			}
+		    logic.saveGame(controller);
 		} while (controller != null);		
     }
         
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         new MasterMind().play();
     }
 }

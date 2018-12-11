@@ -1,12 +1,13 @@
 package MasterMind.Model;
 
-public class Game {
+public class Game implements Cloneable {
 	
 	private State state;
 	
 	private SecretCombination secretCombination;
 	
     private ProposedCombination[] proposedCombinations;
+    
     private int tries;
 	
 	public static final int MAX_TRIES = 10;
@@ -15,7 +16,22 @@ public class Game {
 	public Game() {
 		this.clear();
 	}
+	
+	public Game(Game game) {
+		this.state = game.state;
+		this.secretCombination = new SecretCombination(game.secretCombination);
+
+		this.proposedCombinations = new ProposedCombination[MAX_TRIES];
+		for (int i = 0; i < game.proposedCombinations.length; i++) {
+			if (game.proposedCombinations[i] != null) {
+				this.proposedCombinations[i] = new ProposedCombination(game.proposedCombinations[i]);
+			}
+		}
 		
+		this.tries = game.tries;
+	}
+	
+
 	public State getState() {
 		return state;
 	}
@@ -55,5 +71,9 @@ public class Game {
 	public void calculateResult() {
 		this.proposedCombinations[tries - 1].calculateResult(secretCombination);
 	}
+	
+	public Game clone() throws CloneNotSupportedException {
+        return (Game) super.clone();
+    }
 
 }

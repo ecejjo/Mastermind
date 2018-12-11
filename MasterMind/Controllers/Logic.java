@@ -6,6 +6,8 @@ public class Logic {
 	
 	private Game game;
 	
+	public CareTaker careTaker; 
+	
 	private StartController startController;
 	
 	private ReadController readController;
@@ -14,6 +16,7 @@ public class Logic {
 	
 	public Logic() {
 		game = new Game();
+	    careTaker = new CareTaker();
 		startController = new StartController(game);
 		readController = new ReadController(game);
 		continueController = new ContinueController(game);
@@ -31,5 +34,9 @@ public class Logic {
 			default:
 			return null;
 		}
+	}
+	
+	public void saveGame(OperationController controller) throws CloneNotSupportedException {
+		this.careTaker.add(controller.saveToMemento());
 	}
 }

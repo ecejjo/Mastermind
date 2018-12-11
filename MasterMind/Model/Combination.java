@@ -11,12 +11,13 @@ public class Combination {
 	}
 	
 	public Combination(Combination combination) {
-		colors = new Color[COMBINATION_LENGTH];
+		this.colors = new Color[COMBINATION_LENGTH];
 		
-		for (int i = 0; i < combination.colors.length; i++) {
-			colors[i] = combination.colors[i];
+		if (combination != null) {
+			for (int i = 0; i < combination.colors.length; i++) {
+				this.colors[i] = combination.colors[i];
+			}
 		}
-
 	}
 	
 	public Color[] getColors() {

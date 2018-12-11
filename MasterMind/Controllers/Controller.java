@@ -20,4 +20,15 @@ public abstract class Controller {
 	public ProposedCombination[] getProposedCombinations() {
 		return game.getProposedCombinations();
 	}
+	
+	public Memento saveToMemento() throws CloneNotSupportedException 
+    {
+		Game gameToSave = new Game(game);
+        return new Memento(gameToSave); 
+    }
+
+    public void restoreFromMemento(Memento m) 
+    {
+        game = m.getSavedState(); 
+    }
 }
