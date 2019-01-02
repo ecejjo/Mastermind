@@ -2,27 +2,27 @@
   "state": "MENU",
   "secretCombination": {
     "colors": [
-      "RED",
-      "RED",
-      "YELLOW",
-      "BLACK"
+      "BLACK",
+      "PINK",
+      "WHITE",
+      "PINK"
     ]
   },
   "proposedCombinations": [
     {
       "result": {
         "success": [
-          "BLACK",
-          "BLACK",
+          null,
+          null,
           null,
           null
         ]
       },
       "colors": [
         "RED",
-        "GREEN",
-        "YELLOW",
-        "PINK"
+        "RED",
+        "RED",
+        "RED"
       ]
     },
     null,
@@ -43,10 +43,10 @@
           "state": "MENU",
           "secretCombination": {
             "colors": [
-              "RED",
-              "RED",
-              "YELLOW",
-              "BLACK"
+              "BLACK",
+              "PINK",
+              "WHITE",
+              "PINK"
             ]
           },
           "proposedCombinations": [
@@ -70,27 +70,27 @@
           "state": "MENU",
           "secretCombination": {
             "colors": [
-              "RED",
-              "RED",
-              "YELLOW",
-              "BLACK"
+              "BLACK",
+              "PINK",
+              "WHITE",
+              "PINK"
             ]
           },
           "proposedCombinations": [
             {
               "result": {
                 "success": [
-                  "BLACK",
-                  "BLACK",
+                  null,
+                  null,
                   null,
                   null
                 ]
               },
               "colors": [
                 "RED",
-                "GREEN",
-                "YELLOW",
-                "PINK"
+                "RED",
+                "RED",
+                "RED"
               ]
             },
             null,

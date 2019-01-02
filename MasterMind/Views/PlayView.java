@@ -1,13 +1,13 @@
 package MasterMind.Views;
 
-import MasterMind.Controllers.ReadController;
+import MasterMind.Controllers.PlayController;
 import MasterMind.Util.IO;
 
-public class ReadView {
+public class PlayView {
 	
 	private IO io = new IO();
 	
-	public void interact(ReadController readController) {
+	public void interact(PlayController readController) {
 		readController.start();		
 		ProposedCombinationView proposedCombinationView = new ProposedCombinationView();
 		readController.add(proposedCombinationView.read());

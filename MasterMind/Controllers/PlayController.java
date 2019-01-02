@@ -4,9 +4,9 @@ import MasterMind.Model.Game;
 import MasterMind.Model.ProposedCombination;
 import MasterMind.Model.State;
 
-public class ReadController extends OperationController {
+public class PlayController extends OperationController {
 		
-	public ReadController(Game game) {
+	public PlayController(Game game) {
 		super(game);		
 	}	
 	

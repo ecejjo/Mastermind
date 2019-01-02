@@ -8,7 +8,7 @@ public class Logic {
 	
 	private StartController startController;	
 	private MenuController menuController;
-	private ReadController readController;
+	private PlayController readController;
 	private UndoController undoController;
 	private RedoController redoController;
 	private ContinueController continueController;
@@ -17,7 +17,7 @@ public class Logic {
 		game = new Game();
 		startController = new StartController(game);
 		menuController = new MenuController(game);
-		readController = new ReadController(game);
+		readController = new PlayController(game);
 		undoController = new UndoController(game);
 		redoController = new RedoController(game);
 		continueController = new ContinueController(game);
