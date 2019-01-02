@@ -5,14 +5,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import MasterMind.Model.Game;
+import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
 public class RestoreBinaryController implements RestoreControllerImpl {
 	
-	Game game;
+	GameInterface game;
 		
-	public RestoreBinaryController(Game game) {
+	public RestoreBinaryController(GameInterface game) {
 		this.game = game;
 	}
 
@@ -22,7 +23,7 @@ public class RestoreBinaryController implements RestoreControllerImpl {
 			FileInputStream fis = new FileInputStream(new File(filename + ".bin"));
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			
-			Game restoredGame = (Game) ois.readObject();
+			GameLocal restoredGame = (GameLocal) ois.readObject();
 			game.copy(restoredGame);
 			
 			ois.close();

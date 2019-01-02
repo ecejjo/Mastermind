@@ -1,12 +1,12 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameInterface;
 
 public class SaveController extends OperationController {
 	
     private SaveControllerImpl impl;
 		
-	public SaveController(Game game, String format) {
+	public SaveController(GameInterface game, String format) {
 		super(game);
         if (format.equals("JSON")) {
             impl = new SaveJsonController(game);

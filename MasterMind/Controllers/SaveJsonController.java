@@ -8,15 +8,15 @@ import java.io.Writer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
 
 public class SaveJsonController implements SaveControllerImpl {
 	
-	Game game;
+	GameInterface game;
 			
-	public SaveJsonController(Game game) {
+	public SaveJsonController(GameInterface game) {
 		this.game = game;
 	}
 	

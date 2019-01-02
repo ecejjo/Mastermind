@@ -6,15 +6,16 @@ import java.io.Reader;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
 
 public class RestoreJsonController implements RestoreControllerImpl {
 	
-	Game game;
+	GameInterface game;
 		
-	public RestoreJsonController(Game game) {
+	public RestoreJsonController(GameInterface game) {
 		this.game = game;
 	}
 	
@@ -26,7 +27,7 @@ public class RestoreJsonController implements RestoreControllerImpl {
 			Gson gson = builder.create();
 			
 			Reader reader = new FileReader(filename + ".json");
-			Game restoredGame = gson.fromJson(reader, Game.class);  
+			GameLocal restoredGame = gson.fromJson(reader, GameLocal.class);  
 
 			game.copy(restoredGame);
 			return true;

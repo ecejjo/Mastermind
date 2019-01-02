@@ -1,10 +1,11 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameInterface;
 
 public class Logic {
 	
-	private Game game; 
+	private GameInterface game; 
 	
 	private StartController startController;	
 	private MenuController menuController;
@@ -16,7 +17,7 @@ public class Logic {
 	private ContinueController continueController;
 	
 	public Logic() {
-		game = new Game();
+		game = new GameLocal();
 		startController = new StartController(game);
 		menuController = new MenuController(game);
 		readController = new PlayController(game);

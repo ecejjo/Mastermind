@@ -1,12 +1,12 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameInterface;
 
 public class RestoreController extends OperationController {
 	
     private RestoreControllerImpl impl;
 
-	public RestoreController(Game game, String format) {
+	public RestoreController(GameInterface game, String format) {
 		super(game);
         if (format.equals("JSON")) {
             impl = new RestoreJsonController(game);

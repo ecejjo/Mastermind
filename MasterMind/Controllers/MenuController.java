@@ -1,11 +1,12 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
 public class MenuController extends OperationController {
 		
-	public MenuController(Game game) {
+	public MenuController(GameInterface game) {
 		super(game);
 	}
 
@@ -41,7 +42,7 @@ public class MenuController extends OperationController {
 
 	public void newGame() {
 		assert this.game.getState() == State.MENU;
-		Game newGame = new Game();
+		GameLocal newGame = new GameLocal();
 		game.copy(newGame);
 	}
 	

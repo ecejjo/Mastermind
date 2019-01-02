@@ -1,10 +1,10 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameInterface;
 
 public abstract class OperationController extends Controller {
 
-	protected OperationController(Game game) {
+	protected OperationController(GameInterface game) {
 		super(game);
 	}
 	

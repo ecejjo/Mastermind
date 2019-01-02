@@ -1,16 +1,17 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.ProposedCombination;
 import MasterMind.Model.SecretCombination;
 
 public abstract class Controller {
 
-	protected Game game;
+	protected GameInterface game;
 	
 	protected static final String FILENAME = "MasterMindSaveGame";
 
-	protected Controller(Game game) {
+	protected Controller(GameInterface game) {
 		assert game != null;
 		this.game = game;
 	}
@@ -25,7 +26,7 @@ public abstract class Controller {
 	
 	public Memento saveToMemento() 
     {
-		Game gameToSave = new Game(game);
+		GameLocal gameToSave = new GameLocal(game);
         return new Memento(gameToSave); 
     }
 

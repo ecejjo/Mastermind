@@ -241,8 +241,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="MasterMind.Model.Game" project="MasterMind" 
-    file="/MasterMind/MasterMind/Model/Game.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="29" language="java" name="MasterMind.Model.GameLocal" project="MasterMind" 
+    file="/MasterMind/MasterMind/Model/GameLocal.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="272" x="2237" y="344"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

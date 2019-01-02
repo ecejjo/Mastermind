@@ -2,20 +2,20 @@ package MasterMind.Controllers;
 
 import java.io.Serializable;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameLocal;
 
 public class Memento implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Game game;
+	private GameLocal game;
 	 
-	public Memento(Game gameToSave)
+	public Memento(GameLocal gameToSave)
 	{
 		game = gameToSave; 
 	}
 
-	public Game getSavedState()
+	public GameLocal getSavedState()
 	{
 		return game; 
 	}

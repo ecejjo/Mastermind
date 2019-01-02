@@ -1,11 +1,11 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
 public class ContinueController extends OperationController {
 
-	protected ContinueController(Game game) {
+	protected ContinueController(GameInterface game) {
 		super(game);
 	}
 	

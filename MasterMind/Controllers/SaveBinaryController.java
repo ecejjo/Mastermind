@@ -5,15 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import MasterMind.Model.Game;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
 
 public class SaveBinaryController implements SaveControllerImpl {
 	
-	Game game;
+	GameInterface game;
 			
-	public SaveBinaryController(Game game) {
+	public SaveBinaryController(GameInterface game) {
 		this.game = game;
 	}
 	

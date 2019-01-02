@@ -1,12 +1,12 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.Game;
+import MasterMind.Model.GameInterface;
 import MasterMind.Model.ProposedCombination;
 import MasterMind.Model.State;
 
 public class PlayController extends OperationController {
 		
-	public PlayController(Game game) {
+	public PlayController(GameInterface game) {
 		super(game);		
 	}	
 	
@@ -28,7 +28,7 @@ public class PlayController extends OperationController {
 	}
 	
 	public void saveGame() {
-		this.game.careTaker.add(this.saveToMemento());
+		this.game.getCareTaker().add(this.saveToMemento());
 	}
 	
 	public boolean isWinner() {
