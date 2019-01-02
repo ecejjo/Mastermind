@@ -8,7 +8,7 @@ public abstract class Controller {
 
 	protected Game game;
 	
-	protected static final String filename = "MasterMindSaveGame.txt";
+	protected static final String FILENAME = "MasterMindSaveGame";
 
 	protected Controller(Game game) {
 		assert game != null;

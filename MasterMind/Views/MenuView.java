@@ -11,12 +11,12 @@ public class MenuView {
 	}
 
 	public void interact(MenuController menuController) {
-		
+
 		new GameView(menuController).print();
-		
+
 		this.print();
 		char option = this.readOption();
-				
+
 		switch (option) {
 		case '1':
 			menuController.playGame();
@@ -39,7 +39,7 @@ public class MenuView {
 		case '7':
 			menuController.exitGame();
 			break;
-			
+
 		default:
 			break;
 		}						

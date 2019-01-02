@@ -22,7 +22,7 @@ public class Logic {
 		readController = new PlayController(game);
 		undoController = new UndoController(game);
 		redoController = new RedoController(game);
-		saveController = new SaveController(game);
+		saveController = new SaveController(game, "JSON");
 		restoreController = new RestoreController(game);
 		continueController = new ContinueController(game);
 	}

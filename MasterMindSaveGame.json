@@ -1,0 +1,113 @@
+{
+  "state": "MENU",
+  "secretCombination": {
+    "colors": [
+      "BLACK",
+      "RED",
+      "PINK",
+      "PINK"
+    ]
+  },
+  "proposedCombinations": [
+    {
+      "result": {
+        "success": [
+          "BLACK",
+          null,
+          null,
+          null
+        ]
+      },
+      "colors": [
+        "RED",
+        "RED",
+        "RED",
+        "RED"
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "tries": 1,
+  "careTaker": {
+    "savedGames": [
+      {
+        "game": {
+          "state": "MENU",
+          "secretCombination": {
+            "colors": [
+              "BLACK",
+              "RED",
+              "PINK",
+              "PINK"
+            ]
+          },
+          "proposedCombinations": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "tries": 0,
+          "careTaker": null
+        }
+      },
+      {
+        "game": {
+          "state": "MENU",
+          "secretCombination": {
+            "colors": [
+              "BLACK",
+              "RED",
+              "PINK",
+              "PINK"
+            ]
+          },
+          "proposedCombinations": [
+            {
+              "result": {
+                "success": [
+                  "BLACK",
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "RED",
+                "RED",
+                "RED",
+                "RED"
+              ]
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "tries": 1,
+          "careTaker": null
+        }
+      }
+    ],
+    "current": 1
+  }
+}

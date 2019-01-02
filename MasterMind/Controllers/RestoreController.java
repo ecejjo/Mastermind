@@ -28,7 +28,7 @@ public class RestoreController extends OperationController {
 	public boolean restoreGameBinary() {
 		this.game.setState(State.MENU);
 		try {
-			FileInputStream fis = new FileInputStream(new File(filename));
+			FileInputStream fis = new FileInputStream(new File(FILENAME));
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			
 			Game restoredGame = (Game) ois.readObject();
@@ -54,7 +54,7 @@ public class RestoreController extends OperationController {
 			builder.setPrettyPrinting().serializeNulls();
 			Gson gson = builder.create();
 			
-			Reader reader = new FileReader(filename);
+			Reader reader = new FileReader(FILENAME);
 			Game restoredGame = gson.fromJson(reader, Game.class);  
 
 			game.copy(restoredGame);
