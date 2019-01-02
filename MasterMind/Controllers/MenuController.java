@@ -34,8 +34,8 @@ public class MenuController extends OperationController {
 	}
 
 	public void endGame() {
-		// TODO Auto-generated method stub
-		
+		Game newGame = new Game();
+		game.copy(newGame);
 	}
 
 	public void saveGame() {
