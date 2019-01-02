@@ -31,7 +31,7 @@ public class MenuView {
 			menuController.endGame();
 			break;
 		case '5':
-			menuController.saveGameJSON();
+			menuController.saveGame();
 			break;
 		case '6':
 			menuController.restoreGameJSON();

@@ -11,6 +11,7 @@ public class Logic {
 	private PlayController readController;
 	private UndoController undoController;
 	private RedoController redoController;
+	private SaveController saveController;
 	private ContinueController continueController;
 	
 	public Logic() {
@@ -20,6 +21,7 @@ public class Logic {
 		readController = new PlayController(game);
 		undoController = new UndoController(game);
 		redoController = new RedoController(game);
+		saveController = new SaveController(game);
 		continueController = new ContinueController(game);
 	}
 
@@ -34,11 +36,14 @@ public class Logic {
 			case PLAYING:
 			return readController;
 
-			case UNDO:
+			case UNDOING:
 			return undoController;
 
-			case REDO:
+			case REDOING:
 			return redoController;
+			
+			case SAVING:
+			return saveController;
 			
 			case FINAL:
 			return continueController;

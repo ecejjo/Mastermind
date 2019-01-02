@@ -7,6 +7,7 @@ public interface OperationControllerVisitor {
 	void visit(PlayController readController);	
 	void visit(UndoController undoController);
 	void visit(RedoController redoController);
+	void visit(SaveController saveController);
 	void visit(ContinueController continueController);
 
 }

@@ -4,8 +4,10 @@ public enum State {
 	INITIAL,
 	MENU,
 	PLAYING,
-	UNDO,
-	REDO,
+	UNDOING,
+	REDOING,
+	SAVING,
+	RESTORING,
 	FINAL, 
 	EXIT;
 }

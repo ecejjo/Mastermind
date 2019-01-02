@@ -2,29 +2,14 @@
   "state": "MENU",
   "secretCombination": {
     "colors": [
-      "BLACK",
+      "YELLOW",
       "PINK",
-      "WHITE",
+      "GREEN",
       "PINK"
     ]
   },
   "proposedCombinations": [
-    {
-      "result": {
-        "success": [
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "colors": [
-        "RED",
-        "RED",
-        "RED",
-        "RED"
-      ]
-    },
+    null,
     null,
     null,
     null,
@@ -35,7 +20,7 @@
     null,
     null
   ],
-  "tries": 1,
+  "tries": 0,
   "careTaker": {
     "savedGames": [
       {
@@ -43,9 +28,9 @@
           "state": "MENU",
           "secretCombination": {
             "colors": [
-              "BLACK",
+              "YELLOW",
               "PINK",
-              "WHITE",
+              "GREEN",
               "PINK"
             ]
           },
@@ -64,50 +49,8 @@
           "tries": 0,
           "careTaker": null
         }
-      },
-      {
-        "game": {
-          "state": "MENU",
-          "secretCombination": {
-            "colors": [
-              "BLACK",
-              "PINK",
-              "WHITE",
-              "PINK"
-            ]
-          },
-          "proposedCombinations": [
-            {
-              "result": {
-                "success": [
-                  null,
-                  null,
-                  null,
-                  null
-                ]
-              },
-              "colors": [
-                "RED",
-                "RED",
-                "RED",
-                "RED"
-              ]
-            },
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "tries": 1,
-          "careTaker": null
-        }
       }
     ],
-    "current": 1
+    "current": 0
   }
 }

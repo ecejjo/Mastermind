@@ -3,15 +3,10 @@ package MasterMind.Controllers;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Reader;
-import java.io.Writer;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -39,31 +34,22 @@ public class MenuController extends OperationController {
 
 	public void undo() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.UNDO);
+		this.game.setState(State.UNDOING);
 	}
 
 	public void redo() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.REDO);
+		this.game.setState(State.REDOING);
+	}
+	
+	public void saveGame() {
+		assert this.game.getState() == State.MENU;
+		this.game.setState(State.SAVING);
 	}
 
 	public void endGame() {
 		Game newGame = new Game();
 		game.copy(newGame);
-	}
-
-	public void saveGame() {
-		try {
-			FileOutputStream fos = new FileOutputStream(new File(filename));
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(game);			
-			oos.close();
-			fos.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found");
-		} catch (IOException e) {
-			System.out.println("Error initializing stream");
-		}
 	}
 
 	public void restoreGame() {		
@@ -84,25 +70,7 @@ public class MenuController extends OperationController {
 			e.printStackTrace();
 		}		
 	}
-	
-	public void saveGameJSON() {
-		try {				
-			GsonBuilder builder = new GsonBuilder();
-			builder.setPrettyPrinting().serializeNulls();
-			Gson gson = builder.create();
-			System.out.println(gson.toJson(game));
-			
-			Writer writer = new FileWriter(filename);
-			gson.toJson(game, writer);
-			writer.close();
-			
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found");
-		} catch (IOException e) {
-			System.out.println("Error initializing stream");
-		}
-	}
-	
+		
 	public void restoreGameJSON() {
 		try {
 			GsonBuilder builder = new GsonBuilder();
