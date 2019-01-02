@@ -1,9 +1,19 @@
 package MasterMind.Controllers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 import MasterMind.Model.Game;
 import MasterMind.Model.State;
 
 public class MenuController extends OperationController {
+	
+	private static final String filename = "MasterMindSaveGame.txt";
 		
 	public MenuController(Game game) {
 		super(game);
@@ -39,12 +49,35 @@ public class MenuController extends OperationController {
 	}
 
 	public void saveGame() {
-		// TODO Auto-generated method stub
-		
+		try {
+			FileOutputStream fos = new FileOutputStream(new File(filename));
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(game);
+			oos.close();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} catch (IOException e) {
+			System.out.println("Error initializing stream");
+		}
 	}
 
-	public void restoreGame() {
-		// TODO Auto-generated method stub
-		
+	public void restoreGame() {		
+		try {
+			FileInputStream fis = new FileInputStream(new File(filename));
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			Game restoredGame = (Game) ois.readObject();
+			game.copy(restoredGame);
+			
+			ois.close();
+			fis.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} catch (IOException e) {
+			System.out.println("Error initializing stream");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}		
 	}	
 }

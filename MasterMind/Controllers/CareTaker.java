@@ -1,13 +1,16 @@
 package MasterMind.Controllers;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CareTaker {
+public class CareTaker implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	private ArrayList<Memento> savedGames;
 	
 	private int current;
-	
+		
 	public CareTaker()
 	{
 		savedGames = new ArrayList<Memento>();

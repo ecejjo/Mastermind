@@ -1,9 +1,13 @@
 package MasterMind.Model;
 
+import java.io.Serializable;
+
 import MasterMind.Controllers.CareTaker;
 
-public class Game {
+public class Game implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	private State state;
 	
 	private SecretCombination secretCombination;
@@ -15,7 +19,7 @@ public class Game {
 	public static final int MAX_TRIES = 10;
 	
 	public CareTaker careTaker;
-	
+		
 	public Game() {
 		this.clear();
 	}
@@ -88,5 +92,4 @@ public class Game {
 	public void calculateResult() {
 		this.proposedCombinations[tries - 1].calculateResult(secretCombination);
 	}
-
 }

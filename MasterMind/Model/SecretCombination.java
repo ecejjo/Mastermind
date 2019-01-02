@@ -2,6 +2,8 @@ package MasterMind.Model;
 
 public class SecretCombination extends Combination {
 	
+	private static final long serialVersionUID = 1L;
+
 	public SecretCombination() {
 		super();
 		this.setRandom();

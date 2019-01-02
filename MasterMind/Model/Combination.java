@@ -1,7 +1,11 @@
 package MasterMind.Model;
 
-public class Combination {
+import java.io.Serializable;
+
+public class Combination implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	protected Color[] colors;
 	
 	public static final int COMBINATION_LENGTH = 4;

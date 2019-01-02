@@ -1,8 +1,12 @@
 package MasterMind.Controllers;
 
+import java.io.Serializable;
+
 import MasterMind.Model.Game;
 
-public class Memento {
+public class Memento implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private Game game;
 	 
