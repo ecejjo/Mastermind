@@ -4,12 +4,20 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Reader;
+import java.io.Writer;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import MasterMind.Model.Game;
 import MasterMind.Model.State;
+
 
 public class MenuController extends OperationController {
 	
@@ -52,7 +60,7 @@ public class MenuController extends OperationController {
 		try {
 			FileOutputStream fos = new FileOutputStream(new File(filename));
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(game);
+			oos.writeObject(game);			
 			oos.close();
 			fos.close();
 		} catch (FileNotFoundException e) {
@@ -79,5 +87,38 @@ public class MenuController extends OperationController {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}		
-	}	
+	}
+	
+	public void saveGameJSON() {
+		try {				
+			GsonBuilder builder = new GsonBuilder();
+			builder.setPrettyPrinting().serializeNulls();
+			Gson gson = builder.create();
+			System.out.println(gson.toJson(game));
+			
+			Writer writer = new FileWriter(filename);
+			gson.toJson(game, writer);
+			writer.close();
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} catch (IOException e) {
+			System.out.println("Error initializing stream");
+		}
+	}
+	
+	public void restoreGameJSON() {
+		try {
+			GsonBuilder builder = new GsonBuilder();
+			builder.setPrettyPrinting().serializeNulls();
+			Gson gson = builder.create();
+			
+			Reader reader = new FileReader(filename);
+			Game restoredGame = gson.fromJson(reader, Game.class);  
+
+			game.copy(restoredGame);
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		}
+	}
 }

@@ -31,10 +31,10 @@ public class MenuView {
 			menuController.endGame();
 			break;
 		case '5':
-			menuController.saveGame();
+			menuController.saveGameJSON();
 			break;
 		case '6':
-			menuController.restoreGame();
+			menuController.restoreGameJSON();
 			break;
 
 		default:
