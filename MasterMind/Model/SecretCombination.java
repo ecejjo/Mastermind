@@ -16,4 +16,10 @@ public class SecretCombination extends Combination {
 			this.colors[i] = Color.getRandomColor();
 		}
 	}
+
+	public void copy(SecretCombination secretCombination) {
+		for (int i = 0; i < COMBINATION_LENGTH; i++) {
+			this.colors[i] = secretCombination.colors[i];
+		}		
+	}
 }

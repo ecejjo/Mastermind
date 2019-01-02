@@ -21,13 +21,16 @@ public class MenuController extends OperationController {
 
 	public void undo() {
 		assert this.game.getState() == State.MENU;
-		if (game.careTaker.isPenultimate()) {
-			this.restoreFromMemento(game.careTaker.getPenultimate());
+		if (game.careTaker.isPrevious()) {
+			this.restoreFromMemento(game.careTaker.getPrevious());
 		}
 	}
 
 	public void redo() {
-		// TODO Auto-generated method stub
+		assert this.game.getState() == State.MENU;
+		if (game.careTaker.isNext()) {
+			this.restoreFromMemento(game.careTaker.getNext());
+		}
 	}
 
 	public void endGame() {

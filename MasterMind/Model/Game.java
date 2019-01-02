@@ -34,6 +34,19 @@ public class Game {
 		this.tries = game.tries;
 	}
 	
+	public void copy(Game game) {
+		this.state = game.state;
+		this.secretCombination.copy(game.secretCombination);
+		
+		this.proposedCombinations = new ProposedCombination[MAX_TRIES];
+		for (int i = 0; i < game.proposedCombinations.length; i++) {
+			if (game.proposedCombinations[i] != null) {
+				this.proposedCombinations[i] = new ProposedCombination(game.proposedCombinations[i]);
+			}
+		}
+		
+		this.tries = game.tries;
+	}
 
 	public State getState() {
 		return state;

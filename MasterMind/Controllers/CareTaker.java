@@ -6,14 +6,18 @@ public class CareTaker {
 	
 	private ArrayList<Memento> savedGames;
 	
+	private int current;
+	
 	public CareTaker()
 	{
 		savedGames = new ArrayList<Memento>();
+		current = -1;
 	}
 
 	public void add(Memento m)
 	{
-		savedGames.add(m);
+		current += 1;
+		savedGames.add(current, m);
 	}
 	
 	public Memento get(int index)
@@ -21,13 +25,24 @@ public class CareTaker {
 		return savedGames.get(index);
 	}
 	
-	public boolean isPenultimate()
+	public boolean isPrevious()
 	{
-		return (savedGames.size() >= 2);
+		return (current > 0);
 	}
 	
-	public Memento getPenultimate()
+	public Memento getPrevious()
 	{
-		return savedGames.get(savedGames.size() - 2);
+		current -= 1;
+		return savedGames.get(current);
+	}
+
+	public boolean isNext() {
+		return (current < savedGames.size() - 1);
+	}
+	
+	public Memento getNext()
+	{
+		current += 1;
+		return savedGames.get(current);
 	}
 }
