@@ -34,7 +34,7 @@ public class MenuView {
 			menuController.saveGame();
 			break;
 		case '6':
-			menuController.restoreGameJSON();
+			menuController.restoreGame();
 			break;
 
 		default:

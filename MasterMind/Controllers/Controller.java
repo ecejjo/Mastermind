@@ -7,6 +7,8 @@ import MasterMind.Model.SecretCombination;
 public abstract class Controller {
 
 	protected Game game;
+	
+	protected static final String filename = "MasterMindSaveGame.txt";
 
 	protected Controller(Game game) {
 		assert game != null;

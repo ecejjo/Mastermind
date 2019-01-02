@@ -12,6 +12,7 @@ public class Logic {
 	private UndoController undoController;
 	private RedoController redoController;
 	private SaveController saveController;
+	private RestoreController restoreController;
 	private ContinueController continueController;
 	
 	public Logic() {
@@ -22,6 +23,7 @@ public class Logic {
 		undoController = new UndoController(game);
 		redoController = new RedoController(game);
 		saveController = new SaveController(game);
+		restoreController = new RestoreController(game);
 		continueController = new ContinueController(game);
 	}
 
@@ -44,7 +46,10 @@ public class Logic {
 			
 			case SAVING:
 			return saveController;
-			
+
+			case RESTORING:
+			return restoreController;
+
 			case FINAL:
 			return continueController;
 			

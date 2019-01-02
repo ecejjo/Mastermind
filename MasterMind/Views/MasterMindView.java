@@ -4,6 +4,7 @@ import MasterMind.Controllers.StartController;
 import MasterMind.Controllers.UndoController;
 import MasterMind.Controllers.PlayController;
 import MasterMind.Controllers.RedoController;
+import MasterMind.Controllers.RestoreController;
 import MasterMind.Controllers.SaveController;
 import MasterMind.Controllers.ContinueController;
 import MasterMind.Controllers.MenuController;
@@ -18,6 +19,7 @@ public class MasterMindView implements OperationControllerVisitor {
 	private UndoView undoView;
 	private RedoView redoView;
 	private SaveView saveView;
+	private RestoreView restoreView;
 	private ContinueView continueView;
 	
 	public MasterMindView() {
@@ -27,6 +29,7 @@ public class MasterMindView implements OperationControllerVisitor {
 		undoView = new UndoView();
 		redoView = new RedoView();
 		saveView = new SaveView();
+		restoreView = new RestoreView();
 		continueView = new ContinueView();
 	}
 
@@ -63,6 +66,11 @@ public class MasterMindView implements OperationControllerVisitor {
 	@Override
 	public void visit(SaveController saveController) {
 		saveView.interact(saveController);
+	}
+	
+	@Override
+	public void visit(RestoreController restoreController) {
+		restoreView.interact(restoreController);		
 	}
 
 	@Override
