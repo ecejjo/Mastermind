@@ -28,33 +28,37 @@ public class MenuView {
 			menuController.redo();
 			break;
 		case '4':
-			menuController.endGame();
-			break;
-		case '5':
 			menuController.saveGame();
 			break;
-		case '6':
+		case '5':
 			menuController.restoreGame();
 			break;
-
+		case '6':
+			menuController.newGame();
+			break;
+		case '7':
+			menuController.exitGame();
+			break;
+			
 		default:
 			break;
 		}						
 	}
 
 	private char readOption() {
-		char[] optionsList = {'1', '2', '3', '4', '5', '6'};
+		char[] optionsList = {'1', '2', '3', '4', '5', '6', '7'};
 		LimitedCharDialog limitedCharDialog = new LimitedCharDialog("Select option: ", optionsList);
 		return limitedCharDialog.read();		
 	}
 
 	private void print() {
 		IO io = new IO();
-		io.writeln(" 1.- Play game.");
+		io.writeln(" 1.- Play.");
 		io.writeln(" 2.- Undo.");
 		io.writeln(" 3.- Redo.");
-		io.writeln(" 4.- End game.");
-		io.writeln(" 5.- Save game.");
-		io.writeln(" 6.- Restore game.");
+		io.writeln(" 4.- Save game.");
+		io.writeln(" 5.- Restore game.");
+		io.writeln(" 6.- New game.");
+		io.writeln(" 7.- Exit game.");
 	}
 }

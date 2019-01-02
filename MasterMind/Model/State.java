@@ -8,6 +8,7 @@ public enum State {
 	REDOING,
 	SAVING,
 	RESTORING,
-	FINAL, 
+	NEW,
+	CONTINUE,
 	EXIT;
 }

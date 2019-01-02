@@ -50,7 +50,7 @@ public class Logic {
 			case RESTORING:
 			return restoreController;
 
-			case FINAL:
+			case CONTINUE:
 			return continueController;
 			
 			case EXIT:

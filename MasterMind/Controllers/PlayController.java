@@ -44,6 +44,6 @@ public class PlayController extends OperationController {
 	}	
 	
 	public void end() {
-		this.game.setState(State.FINAL);
+		this.game.setState(State.EXIT);
 	}	
 }

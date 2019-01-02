@@ -39,8 +39,14 @@ public class MenuController extends OperationController {
 		this.game.setState(State.RESTORING);
 	}
 
-	public void endGame() {
+	public void newGame() {
+		assert this.game.getState() == State.MENU;
 		Game newGame = new Game();
 		game.copy(newGame);
-	}		
+	}
+	
+	public void exitGame() {
+		assert this.game.getState() == State.MENU;
+		this.game.setState(State.CONTINUE);
+	}
 }

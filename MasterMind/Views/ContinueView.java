@@ -12,9 +12,16 @@ public class ContinueView {
 
 		char answer;
 		do {
-			answer = io.readChar("Play again? (s/n): ");
+			answer = io.readChar("Confirm to exit? (s/n): ");
 		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
-		
-		continueController.end(answer);
+	
+		if (continueController.end(answer) == true) {
+			io.writeln("Exiting ...");
+			io.writeln("Bye!!");
+		}
+		else {
+			io.writeln("Continuing ...");
+		}
+			
 	}
 }

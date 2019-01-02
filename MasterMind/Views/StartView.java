@@ -8,7 +8,7 @@ public class StartView {
 	private IO io = new IO();
 	
 	public void interact(StartController startController) {
-		io.writeln("Game starts!!");
+		io.writeln("New game!!");
 		startController.start();
 	}
 }
