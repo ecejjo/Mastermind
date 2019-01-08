@@ -37,7 +37,6 @@ public class Menu {
 
 	public void execute(MenuController menuController) {
 		this.set(menuController);
-		exitCommand.reset();
 		this.write();
 		int option = this.getOption();
 		commandList.get(option).execute();
@@ -52,9 +51,5 @@ public class Menu {
 
 	private int getOption() {
 		return LimitedIntDialog.instance().read("Select option", 1, commandList.size()) - 1;
-	}
-
-	public boolean isClosed() {
-		return exitCommand.closed();
 	}
 }
