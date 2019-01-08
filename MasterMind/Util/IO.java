@@ -30,7 +30,7 @@ public class IO {
 				input = Integer.parseInt(this.readString(title));
 				ok = true;
 			} catch (Exception ex) {
-				this.writeError("entero");
+				this.writeError("integer");
 			}
 		} while (!ok);
 		return input;
@@ -42,7 +42,7 @@ public class IO {
 		do {
 			String input = this.readString(title);
 			if (input.length() != 1) {
-				this.writeError("caracter");
+				this.writeError("character");
 			} else {
 				charValue = input.charAt(0);
 				ok = true;
@@ -64,7 +64,7 @@ public class IO {
 	}
 
 	private void writeError(String formato) {
-		System.out.println("ERROR DE FORMATO! "
-				+ "Introduzca un valor con formato " + formato + ".");
+		System.out.println("Format error! "
+				+ "Input a value with " + formato + " format.");
 	}
 }
