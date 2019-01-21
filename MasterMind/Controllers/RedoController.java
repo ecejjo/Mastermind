@@ -12,7 +12,7 @@ public class RedoController extends OperationController {
 	public boolean run() {
 		assert this.game.getState() == State.REDOING;
 		this.game.setState(State.MENU);
-		if (game.getCareTaker().isNext()) {
+		if (game.getCareTaker().nextExists()) {
 			this.restoreFromMemento(game.getCareTaker().getNext());
 			return true;
 		}

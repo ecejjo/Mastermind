@@ -24,12 +24,20 @@ public class MenuController extends OperationController {
 		assert this.game.getState() == State.MENU;
 		this.game.setState(State.UNDOING);
 	}
+	
+	public boolean isUndoable() {
+		return this.game.getCareTaker().previousExists();
+	}
 
 	public void redo() {
 		assert this.game.getState() == State.MENU;
 		this.game.setState(State.REDOING);
 	}
-	
+
+	public boolean isRedoable() {
+		return this.game.getCareTaker().nextExists();
+	}
+
 	public void saveGame() {
 		assert this.game.getState() == State.MENU;
 		this.game.setState(State.SAVING);

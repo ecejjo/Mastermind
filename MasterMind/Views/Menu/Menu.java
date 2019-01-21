@@ -12,31 +12,41 @@ public class Menu {
 	protected List<Command> commandList;
 
 	private ExitCommand exitCommand;
+	
+	private MenuController menuController;
 
 	public Menu() {
 		this.commandList = new ArrayList<Command>();
-		this.setCommands();
 		exitCommand = new ExitCommand();
-		this.commandList.add(exitCommand);
 	}
 
 	protected void setCommands() {
-		commandList.add(new PlayCommand());
-		commandList.add(new UndoCommand());
-		commandList.add(new RedoCommand());
-		commandList.add(new SaveGameCommand());
-		commandList.add(new RestoreGameCommand());
-		commandList.add(new NewGameCommand());
+		this.commandList.add(new PlayCommand());
+		
+		if (this.menuController.isUndoable()) {
+			this.commandList.add(new UndoCommand());			
+		}
+		
+		if (this.menuController.isRedoable()) {
+			this.commandList.add(new RedoCommand());			
+		}
+		
+		this.commandList.add(new SaveGameCommand());
+		this.commandList.add(new RestoreGameCommand());
+		this.commandList.add(new NewGameCommand());
+		this.commandList.add(exitCommand);
 	}
 
-	protected void set(MenuController menuController) {
+	protected void setController(MenuController menuController) {
 		for(Command command : commandList){
 			command.set(menuController);
 		}
 	}
 
 	public void execute(MenuController menuController) {
-		this.set(menuController);
+		this.menuController = menuController;
+		this.setCommands();
+		this.setController(menuController);
 		this.write();
 		int option = this.getOption();
 		commandList.get(option).execute();

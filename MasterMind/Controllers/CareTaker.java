@@ -28,7 +28,7 @@ public class CareTaker implements Serializable {
 		return savedGames.get(index);
 	}
 	
-	public boolean isPrevious()
+	public boolean previousExists()
 	{
 		return (current > 0);
 	}
@@ -39,7 +39,7 @@ public class CareTaker implements Serializable {
 		return savedGames.get(current);
 	}
 
-	public boolean isNext() {
+	public boolean nextExists() {
 		return (current < savedGames.size() - 1);
 	}
 	
