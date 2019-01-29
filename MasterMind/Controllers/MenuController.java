@@ -16,8 +16,7 @@ public class MenuController extends OperationController {
 	
 	public void newGame() {
 		assert this.game.getState() == State.MENU;
-		this.game.newGame();
-		this.game.getCareTaker().add(this.saveToMemento());
+		this.game.setState(State.NEW_GAME);
 	}
 
 	public void playGame() {

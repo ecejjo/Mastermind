@@ -1,9 +1,8 @@
 package MasterMind.Model;
 
 public enum State {
-	INITIAL,
-	NEW,
 	MENU,
+	NEW_GAME,
 	PLAYING,
 	UNDOING,
 	REDOING,

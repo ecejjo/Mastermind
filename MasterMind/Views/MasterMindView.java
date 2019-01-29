@@ -1,6 +1,6 @@
 package MasterMind.Views;
 
-import MasterMind.Controllers.StartController;
+import MasterMind.Controllers.NewGameController;
 import MasterMind.Controllers.UndoController;
 import MasterMind.Controllers.PlayController;
 import MasterMind.Controllers.RedoController;
@@ -14,7 +14,7 @@ import MasterMind.Controllers.OperationControllerVisitor;
 
 public class MasterMindView implements OperationControllerVisitor {
 	
-	private StartView startView;
+	private NewGameView startView;
 	private MenuView menuView;
 	private PlayView readView;
 	private UndoView undoView;
@@ -25,7 +25,7 @@ public class MasterMindView implements OperationControllerVisitor {
 	private AbortView abortView;
 	
 	public MasterMindView() {
-		startView = new StartView();
+		startView = new NewGameView();
 		menuView = new MenuView();
 		readView = new PlayView();
 		undoView = new UndoView();
@@ -42,7 +42,7 @@ public class MasterMindView implements OperationControllerVisitor {
 	}
 	
 	@Override
-	public void visit(StartController startController) {
+	public void visit(NewGameController startController) {
 		startView.interact(startController);
 	}
 	

@@ -53,8 +53,11 @@ public class GameLocal implements GameInterface, Serializable {
 				this.proposedCombinations[i] = new ProposedCombination(game.proposedCombinations[i]);
 			}
 		}
-		
 		this.tries = game.tries;
+		
+		if (game.careTaker != null) {
+			this.careTaker.copy(game.careTaker);
+		}
 	}
 
 	public State getState() {

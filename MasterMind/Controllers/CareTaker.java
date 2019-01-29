@@ -48,4 +48,16 @@ public class CareTaker implements Serializable {
 		current += 1;
 		return savedGames.get(current);
 	}
+
+	public void copy(CareTaker careTaker) {
+		
+		this.savedGames = new ArrayList<Memento>();
+		for (int i = 0; i < careTaker.savedGames.size(); i++) {
+			if (careTaker.savedGames.get(i) != null) {
+				this.savedGames.add(new Memento(careTaker.savedGames.get(i).getSavedState()));
+			}
+		}
+	
+		this.current = careTaker.current;
+	}
 }

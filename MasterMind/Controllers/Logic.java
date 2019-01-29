@@ -7,8 +7,8 @@ public class Logic {
 	
 	private GameInterface game; 
 	
-	private StartController startController;	
 	private MenuController menuController;
+	private NewGameController newGameController;	
 	private PlayController readController;
 	private UndoController undoController;
 	private RedoController redoController;
@@ -19,8 +19,8 @@ public class Logic {
 	
 	public Logic() {
 		game = new GameLocal();
-		startController = new StartController(game);
 		menuController = new MenuController(game);
+		newGameController = new NewGameController(game);
 		readController = new PlayController(game);
 		undoController = new UndoController(game);
 		redoController = new RedoController(game);
@@ -32,11 +32,11 @@ public class Logic {
 
 	public OperationController getController() {
 		switch (game.getState()) {
-			case INITIAL:
-			return startController;
-			
 			case MENU:
 			return menuController;
+
+			case NEW_GAME:
+			return newGameController;
 			
 			case PLAYING:
 			return readController;

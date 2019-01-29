@@ -2,9 +2,9 @@
   "state": "MENU",
   "secretCombination": {
     "colors": [
+      "RED",
       "WHITE",
-      "GREEN",
-      "WHITE",
+      "PINK",
       "PINK"
     ]
   },
@@ -12,7 +12,7 @@
     {
       "result": {
         "success": [
-          null,
+          "BLACK",
           null,
           null,
           null
@@ -35,10 +35,10 @@
         ]
       },
       "colors": [
-        "YELLOW",
-        "YELLOW",
-        "YELLOW",
-        "YELLOW"
+        "GREEN",
+        "GREEN",
+        "GREEN",
+        "GREEN"
       ]
     },
     null,
@@ -58,9 +58,36 @@
           "state": "MENU",
           "secretCombination": {
             "colors": [
+              "RED",
               "WHITE",
-              "GREEN",
+              "PINK",
+              "PINK"
+            ]
+          },
+          "proposedCombinations": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "tries": 0,
+          "careTaker": null
+        }
+      },
+      {
+        "game": {
+          "state": "MENU",
+          "secretCombination": {
+            "colors": [
+              "RED",
               "WHITE",
+              "PINK",
               "PINK"
             ]
           },
@@ -68,7 +95,49 @@
             {
               "result": {
                 "success": [
+                  "BLACK",
                   null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "RED",
+                "RED",
+                "RED",
+                "RED"
+              ]
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "tries": 1,
+          "careTaker": null
+        }
+      },
+      {
+        "game": {
+          "state": "MENU",
+          "secretCombination": {
+            "colors": [
+              "RED",
+              "WHITE",
+              "PINK",
+              "PINK"
+            ]
+          },
+          "proposedCombinations": [
+            {
+              "result": {
+                "success": [
+                  "BLACK",
                   null,
                   null,
                   null
@@ -91,10 +160,10 @@
                 ]
               },
               "colors": [
-                "YELLOW",
-                "YELLOW",
-                "YELLOW",
-                "YELLOW"
+                "GREEN",
+                "GREEN",
+                "GREEN",
+                "GREEN"
               ]
             },
             null,
@@ -111,6 +180,6 @@
         }
       }
     ],
-    "current": 0
+    "current": 2
   }
 }
