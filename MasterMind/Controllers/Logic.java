@@ -15,6 +15,7 @@ public class Logic {
 	private SaveController saveController;
 	private RestoreController restoreController;
 	private ContinueController continueController;
+	private AbortController abortController;
 	
 	public Logic() {
 		game = new GameLocal();
@@ -26,6 +27,7 @@ public class Logic {
 		saveController = new SaveController(game, "JSON");
 		restoreController = new RestoreController(game, "JSON");
 		continueController = new ContinueController(game);
+		abortController = new AbortController(game);
 	}
 
 	public OperationController getController() {
@@ -53,6 +55,9 @@ public class Logic {
 
 			case CONTINUE:
 			return continueController;
+			
+			case ABORT:
+			return abortController;
 			
 			case EXIT:
 			default:

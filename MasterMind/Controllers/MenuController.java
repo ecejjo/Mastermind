@@ -1,6 +1,5 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.GameLocal;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
@@ -14,10 +13,21 @@ public class MenuController extends OperationController {
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
 	}
+	
+	public void newGame() {
+		assert this.game.getState() == State.MENU;
+		this.game.newGame();
+		this.game.getCareTaker().add(this.saveToMemento());
+	}
 
 	public void playGame() {
 		assert this.game.getState() == State.MENU;
 		this.game.setState(State.PLAYING);
+	}
+	
+	public boolean inGame() {
+		assert this.game.getState() == State.MENU;
+		return (this.game.getSecretCombination() != null);
 	}
 
 	public void undo() {
@@ -47,11 +57,10 @@ public class MenuController extends OperationController {
 		assert this.game.getState() == State.MENU;
 		this.game.setState(State.RESTORING);
 	}
-
-	public void newGame() {
+	
+	public void AbortGame() {
 		assert this.game.getState() == State.MENU;
-		GameLocal newGame = new GameLocal();
-		game.copy(newGame);
+		this.game.setState(State.ABORT);
 	}
 	
 	public void exitGame() {

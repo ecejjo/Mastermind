@@ -21,7 +21,14 @@ public class Menu {
 	}
 
 	protected void setCommands() {
-		this.commandList.add(new PlayCommand());
+
+		if ( ! this.menuController.inGame()) {
+			this.commandList.add(new NewGameCommand());
+		}
+		
+		if (this.menuController.inGame()) {
+			this.commandList.add(new PlayCommand());
+		}
 		
 		if (this.menuController.isUndoable()) {
 			this.commandList.add(new UndoCommand());			
@@ -31,10 +38,21 @@ public class Menu {
 			this.commandList.add(new RedoCommand());			
 		}
 		
-		this.commandList.add(new SaveGameCommand());
-		this.commandList.add(new RestoreGameCommand());
-		this.commandList.add(new NewGameCommand());
-		this.commandList.add(exitCommand);
+		if (this.menuController.inGame()) {
+			this.commandList.add(new SaveGameCommand());
+		}
+
+		if ( ! this.menuController.inGame()) {
+			this.commandList.add(new RestoreGameCommand());
+		}
+		
+		if ( this.menuController.inGame()) {
+			this.commandList.add(new AbortGameCommand());
+		}
+		
+		if ( ! this.menuController.inGame()) {
+			this.commandList.add(exitCommand);
+		}
 	}
 
 	protected void setController(MenuController menuController) {

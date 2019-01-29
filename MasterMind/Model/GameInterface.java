@@ -3,6 +3,8 @@ package MasterMind.Model;
 import MasterMind.Controllers.CareTaker;
 
 public interface GameInterface {
+	
+	void newGame();
 
 	State getState();
 	
@@ -25,4 +27,6 @@ public interface GameInterface {
 	boolean moreTries();
 
 	int getTries();
+
+	void abortGame();
 }

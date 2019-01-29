@@ -1,6 +1,7 @@
 package MasterMind.Views;
 
 import MasterMind.Model.SecretCombination;
+import MasterMind.Util.IO;
 
 public class SecretCombinationView {
 	
@@ -11,8 +12,11 @@ public class SecretCombinationView {
 	}
 
 	public void print() {
-		for (int i = 0; i < secretCombination.getColors().length; i++) {
-			new ColorView(secretCombination.getColors()[i]).print();
+		if (this.secretCombination != null)
+		{
+			for (int i = 0; i < secretCombination.getColors().length; i++) {
+				new ColorView(secretCombination.getColors()[i]).print();
+			}
 		}
 	}
 }

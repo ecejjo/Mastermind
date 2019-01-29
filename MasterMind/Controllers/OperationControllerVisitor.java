@@ -10,5 +10,6 @@ public interface OperationControllerVisitor {
 	void visit(SaveController saveController);
 	void visit(RestoreController restoreController);
 	void visit(ContinueController continueController);
+	void visit(AbortController abortController);
 
 }

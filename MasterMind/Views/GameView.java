@@ -14,17 +14,26 @@ public class GameView {
 	}
 	
 	public void print() {
-		io.write("Secret: ");
-		new SecretCombinationView(controller.getSecretCombination()).print();
-		io.writeln();
 		
-		io.writeln("Proposed Combinations: ");
-		for (int i = 0; i < controller.getProposedCombinations().length; i++) {
-			if (controller.getProposedCombinations()[i] != null) {
-				io.write("try number " + Integer.toString(i) + " : ");
-				new ProposedCombinationView(controller.getProposedCombinations()[i]).print();
-				io.writeln();				
+		if (controller.getSecretCombination() != null)
+		{	
+			io.write("Secret: ");
+			new SecretCombinationView(controller.getSecretCombination()).print();
+			io.writeln();
+			
+			io.writeln("Proposed Combinations: ");
+			for (int i = 0; i < controller.getProposedCombinations().length; i++) {
+				if (controller.getProposedCombinations()[i] != null) {
+					io.write("try number " + Integer.toString(i) + " : ");
+					new ProposedCombinationView(controller.getProposedCombinations()[i]).print();
+					io.writeln();				
+				}
 			}
+		}
+		else
+		{
+			IO io = new IO();
+			io.writeln("Not in game.");
 		}
 	}
 }

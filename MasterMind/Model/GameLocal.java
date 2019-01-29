@@ -40,6 +40,11 @@ public class GameLocal implements GameInterface, Serializable {
 	
 	public void copy(GameLocal game) {
 		this.state = game.state;
+		
+		if (this.secretCombination == null) {
+			this.secretCombination = new SecretCombination();
+		}
+		
 		this.secretCombination.copy(game.secretCombination);
 		
 		this.proposedCombinations = new ProposedCombination[MAX_TRIES];
@@ -68,14 +73,26 @@ public class GameLocal implements GameInterface, Serializable {
 		this.careTaker = careTaker;
 	}
 
-	public void clear() {
-		state = State.INITIAL;
+	public void newGame() {
+		state = State.MENU;
     	secretCombination = new SecretCombination();
     	proposedCombinations = new ProposedCombination[MAX_TRIES];
     	tries = 0;
 		careTaker = new CareTaker();
 	}
-
+	
+	public void clear() {
+    	tries = 0;
+		state = State.MENU;
+		secretCombination = null;
+		proposedCombinations = new ProposedCombination[MAX_TRIES];
+		careTaker = new CareTaker();
+	}
+	
+	public void abortGame() {
+		this.clear();		
+	}
+	
 	public boolean isWinner() {
 		return proposedCombinations[tries - 1].isWinner();
 	}
