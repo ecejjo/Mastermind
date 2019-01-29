@@ -16,7 +16,7 @@ public class GameLocal implements GameInterface, Serializable {
     
     private int tries;
 	
-	public static final int MAX_TRIES = 10;
+	public static final int MAX_TRIES = 5;
 	
 	public CareTaker careTaker;
 		

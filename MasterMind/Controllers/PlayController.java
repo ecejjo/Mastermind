@@ -15,15 +15,9 @@ public class PlayController extends OperationController {
 		operationControllerVisitor.visit(this);		
 	}
 	
-	public void start() {
-		assert this.game.getState() == State.PLAYING;
-	}
-	
 	public void add(ProposedCombination proposedCombination) {
+		assert this.game.getState() == State.PLAYING;
 		this.game.add(proposedCombination);
-	}
-	
-	public void calculateResult() {
 		this.game.calculateResult();
 	}
 	
@@ -43,7 +37,7 @@ public class PlayController extends OperationController {
 		this.game.setState(State.MENU);
 	}	
 	
-	public void end() {
-		this.game.setState(State.EXIT);
+	public void endGame() {
+		this.game.setState(State.ABORT);
 	}	
 }

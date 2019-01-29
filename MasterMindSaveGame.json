@@ -41,16 +41,41 @@
         "GREEN"
       ]
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      "result": {
+        "success": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "colors": [
+        "BLACK",
+        "BLACK",
+        "BLACK",
+        "BLACK"
+      ]
+    },
+    {
+      "result": {
+        "success": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "colors": [
+        "YELLOW",
+        "YELLOW",
+        "YELLOW",
+        "YELLOW"
+      ]
+    },
     null
   ],
-  "tries": 2,
+  "tries": 4,
   "careTaker": {
     "savedGames": [
       {
@@ -178,8 +203,157 @@
           "tries": 2,
           "careTaker": null
         }
+      },
+      {
+        "game": {
+          "state": "MENU",
+          "secretCombination": {
+            "colors": [
+              "RED",
+              "WHITE",
+              "PINK",
+              "PINK"
+            ]
+          },
+          "proposedCombinations": [
+            {
+              "result": {
+                "success": [
+                  "BLACK",
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "RED",
+                "RED",
+                "RED",
+                "RED"
+              ]
+            },
+            {
+              "result": {
+                "success": [
+                  null,
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "GREEN",
+                "GREEN",
+                "GREEN",
+                "GREEN"
+              ]
+            },
+            {
+              "result": {
+                "success": [
+                  null,
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "BLACK",
+                "BLACK",
+                "BLACK",
+                "BLACK"
+              ]
+            },
+            null,
+            null
+          ],
+          "tries": 3,
+          "careTaker": null
+        }
+      },
+      {
+        "game": {
+          "state": "MENU",
+          "secretCombination": {
+            "colors": [
+              "RED",
+              "WHITE",
+              "PINK",
+              "PINK"
+            ]
+          },
+          "proposedCombinations": [
+            {
+              "result": {
+                "success": [
+                  "BLACK",
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "RED",
+                "RED",
+                "RED",
+                "RED"
+              ]
+            },
+            {
+              "result": {
+                "success": [
+                  null,
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "GREEN",
+                "GREEN",
+                "GREEN",
+                "GREEN"
+              ]
+            },
+            {
+              "result": {
+                "success": [
+                  null,
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "BLACK",
+                "BLACK",
+                "BLACK",
+                "BLACK"
+              ]
+            },
+            {
+              "result": {
+                "success": [
+                  null,
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "colors": [
+                "YELLOW",
+                "YELLOW",
+                "YELLOW",
+                "YELLOW"
+              ]
+            },
+            null
+          ],
+          "tries": 4,
+          "careTaker": null
+        }
       }
     ],
-    "current": 2
+    "current": 4
   }
 }

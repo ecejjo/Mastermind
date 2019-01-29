@@ -13,11 +13,7 @@ public class AbortController extends OperationController {
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
 	}
-	
-	public void start() {
-		assert this.game.getState() == State.ABORT;
-	}
-	
+		
 	public boolean abort(char answer) {
 		assert this.game.getState() == State.ABORT;
 		
@@ -28,5 +24,9 @@ public class AbortController extends OperationController {
 			this.game.setState(State.MENU);
 			return false;
 		}		
+	}
+	
+	public boolean moreTries() {
+		return this.game.moreTries();
 	}
 }

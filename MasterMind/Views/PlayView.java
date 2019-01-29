@@ -7,28 +7,27 @@ public class PlayView {
 	
 	private IO io = new IO();
 	
-	public void interact(PlayController readController) {
-		readController.start();		
+	public void interact(PlayController playController) {
+
 		ProposedCombinationView proposedCombinationView = new ProposedCombinationView();
-		readController.add(proposedCombinationView.read());
-		readController.calculateResult();
+		playController.add(proposedCombinationView.read());
 						
-    	if (readController.isWinner())
+    	if (playController.isWinner())
     	{
     		io.writeln("Matches. You win!!");
-    		readController.end();
+    		playController.endGame();
     	}
-    	else if (! readController.moreTries())
+    	else if ( ! playController.moreTries())
     	{
     		io.writeln("End of tries. You loose!!");
-    		readController.end();
+    		playController.endGame();
     	}
     	else
     	{
-    		readController.done();
+    		playController.done();
     	}
     	
 		io.writeln("Saving try ...");
-		readController.saveGame();
+		playController.saveGame();
 	}
 }
