@@ -26,7 +26,7 @@ public class MenuController extends OperationController {
 	
 	public boolean inGame() {
 		assert this.game.getState() == State.MENU;
-		return (this.game.getSecretCombination() != null);
+		return (this.game.inGame());
 	}
 
 	public void undo() {
@@ -57,7 +57,7 @@ public class MenuController extends OperationController {
 		this.game.setState(State.RESTORING);
 	}
 	
-	public void AbortGame() {
+	public void abortGame() {
 		assert this.game.getState() == State.MENU;
 		this.game.setState(State.ABORT);
 	}

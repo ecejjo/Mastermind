@@ -8,6 +8,6 @@ class AbortGameCommand extends Command {
 
 	@Override
 	public void execute() {
-		menuController.AbortGame();
+		menuController.abortGame();
 	}
 }

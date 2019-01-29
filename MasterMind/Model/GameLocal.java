@@ -124,4 +124,8 @@ public class GameLocal implements GameInterface, Serializable {
 	public void calculateResult() {
 		this.proposedCombinations[tries - 1].calculateResult(secretCombination);
 	}
+	
+	public boolean inGame() {
+		return this.secretCombination != null;
+	}
 }
