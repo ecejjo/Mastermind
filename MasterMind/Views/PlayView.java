@@ -15,17 +15,13 @@ public class PlayView {
     	if (playController.isWinner())
     	{
     		io.writeln("Matches. You win!!");
-    		playController.endGame();
     	}
     	else if ( ! playController.moreTries())
     	{
     		io.writeln("End of tries. You loose!!");
-    		playController.endGame();
     	}
-    	else
-    	{
-    		playController.done();
-    	}
+    	
+   		playController.done();
     	
 		io.writeln("Saving try ...");
 		playController.saveGame();

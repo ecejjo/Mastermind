@@ -24,9 +24,5 @@ public class AbortController extends OperationController {
 			this.game.setState(State.MENU);
 			return false;
 		}		
-	}
-	
-	public boolean moreTries() {
-		return this.game.moreTries();
-	}
+	}	
 }

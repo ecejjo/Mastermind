@@ -36,8 +36,4 @@ public class PlayController extends OperationController {
 	public void done() {
 		this.game.setState(State.MENU);
 	}	
-	
-	public void endGame() {
-		this.game.setState(State.ABORT);
-	}	
 }

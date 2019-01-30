@@ -26,7 +26,9 @@ public class Menu {
 			this.commandList.add(new NewGameCommand());
 		}
 		
-		if (this.menuController.inGame()) {
+		if (this.menuController.inGame() & 
+			this.menuController.moreTries() &
+			! this.menuController.isWinner() ) {
 			this.commandList.add(new PlayCommand());
 		}
 		

@@ -28,6 +28,14 @@ public class MenuController extends OperationController {
 		assert this.game.getState() == State.MENU;
 		return (this.game.inGame());
 	}
+	
+	public boolean moreTries() {
+		return this.game.moreTries();
+	}
+	
+	public boolean isWinner() {
+		return game.isWinner();
+	}
 
 	public void undo() {
 		assert this.game.getState() == State.MENU;

@@ -97,6 +97,9 @@ public class GameLocal implements GameInterface, Serializable {
 	}
 	
 	public boolean isWinner() {
+		if (tries == 0) {
+			return false;
+		}
 		return proposedCombinations[tries - 1].isWinner();
 	}
 	
