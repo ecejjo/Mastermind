@@ -14,9 +14,7 @@ public class ExitController extends OperationController {
 		operationControllerVisitor.visit(this);		
 	}
 	
-	public boolean exitRun(char answer) {
-		assert this.game.getState() == State.CONTINUE;
-		
+	public boolean exitRun(char answer) {		
 		if ( (answer == 's') || (answer == 'S') ) {
 			this.game.setState(State.EXIT);
 			return true;

@@ -15,7 +15,6 @@ public class NewGameController extends OperationController {
 	}
 
 	public void newGameRun() {
-		assert this.game.getState() == State.NEW_GAME;
 		this.game.newGame();
 		this.game.setState(State.MENU);
 		this.game.getCareTaker().add(this.saveToMemento());

@@ -16,7 +16,6 @@ public class PlayController extends OperationController {
 	}
 	
 	public void add(ProposedCombination proposedCombination) {
-		assert this.game.getState() == State.PLAYING;
 		this.game.add(proposedCombination);
 		this.game.calculateResult();
 	}

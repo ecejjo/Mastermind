@@ -44,30 +44,6 @@ public class Logic {
 			case MENU:
 			return menuController;
 
-			case NEW_GAME:
-			return newGameController;
-			
-			case PLAYING:
-			return playController;
-
-			case UNDOING:
-			return undoController;
-
-			case REDOING:
-			return redoController;
-			
-			case SAVING:
-			return saveController;
-
-			case RESTORING:
-			return restoreController;
-
-			case CONTINUE:
-			return exitController;
-			
-			case ABORT:
-			return abortController;
-			
 			case EXIT:
 			default:
 			return null;

@@ -10,7 +10,6 @@ public class UndoController extends OperationController {
 	}
 	
 	public boolean run() {
-		assert this.game.getState() == State.UNDOING;
 		this.game.setState(State.MENU);
 		if (game.getCareTaker().previousExists()) {
 			this.restoreFromMemento(game.getCareTaker().getPrevious());

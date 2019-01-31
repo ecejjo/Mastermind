@@ -14,9 +14,7 @@ public class AbortController extends OperationController {
 		operationControllerVisitor.visit(this);		
 	}
 		
-	public boolean abort(char answer) {
-		assert this.game.getState() == State.ABORT;
-		
+	public boolean abort(char answer) {		
 		if ( (answer == 's') || (answer == 'S') ) {
 			this.game.abortGame();
 			return true;
