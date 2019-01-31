@@ -3,27 +3,33 @@ package MasterMind.Controllers;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
-public class NewGameController extends OperationController {
-	
-	protected NewGameController(GameInterface game) {
+public class ExitController extends OperationController {
+
+	protected ExitController(GameInterface game) {
 		super(game);
 	}
-			
+	
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
 	}
-
-	public void newGameRun() {
-		assert this.game.getState() == State.NEW_GAME;
-		this.game.newGame();
-		this.game.setState(State.MENU);
-		this.game.getCareTaker().add(this.saveToMemento());
+	
+	public boolean exitRun(char answer) {
+		assert this.game.getState() == State.CONTINUE;
+		
+		if ( (answer == 's') || (answer == 'S') ) {
+			this.game.setState(State.EXIT);
+			return true;
+		} else {
+			this.game.setState(State.MENU);
+			return false;
+		}		
 	}
 
 	@Override
 	public void newGame() {
-		masterMindView.interact(this);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -64,7 +70,6 @@ public class NewGameController extends OperationController {
 
 	@Override
 	public void exitGame() {
-		// TODO Auto-generated method stub
-		
+		masterMindView.interact(this);
 	}
 }

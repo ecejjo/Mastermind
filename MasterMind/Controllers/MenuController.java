@@ -1,14 +1,33 @@
 package MasterMind.Controllers;
 
+import java.util.ArrayList;
+
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
+import MasterMind.Views.MasterMindView;
 
 public class MenuController extends OperationController {
+	
+	private ArrayList<OperationController> controllersList;
 		
 	public MenuController(GameInterface game) {
 		super(game);
+		controllersList = new ArrayList<OperationController>();
 	}
 
+	public void add(OperationController controller)
+	{
+		controllersList.add(controller);
+	}
+	
+	@Override
+	public void setMasterMindView(MasterMindView view) {
+		masterMindView = view;
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).setMasterMindView(view);
+		}
+	}
+	
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
@@ -16,12 +35,16 @@ public class MenuController extends OperationController {
 	
 	public void newGame() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.NEW_GAME);
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).newGame();
+		}
 	}
 
 	public void playGame() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.PLAYING);
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).playGame();
+		}
 	}
 	
 	public boolean inGame() {
@@ -39,7 +62,10 @@ public class MenuController extends OperationController {
 
 	public void undo() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.UNDOING);
+		assert this.game.getState() == State.MENU;
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).undo();
+		}
 	}
 	
 	public boolean isUndoable() {
@@ -48,7 +74,9 @@ public class MenuController extends OperationController {
 
 	public void redo() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.REDOING);
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).redo();
+		}
 	}
 
 	public boolean isRedoable() {
@@ -57,21 +85,29 @@ public class MenuController extends OperationController {
 
 	public void saveGame() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.SAVING);
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).saveGame();
+		}
 	}
 	
 	public void restoreGame() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.RESTORING);
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).restoreGame();
+		}
 	}
 	
 	public void abortGame() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.ABORT);
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).abortGame();
+		}
 	}
 	
 	public void exitGame() {
 		assert this.game.getState() == State.MENU;
-		this.game.setState(State.CONTINUE);
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).exitGame();
+		}
 	}
 }

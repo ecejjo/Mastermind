@@ -1,21 +1,21 @@
 package MasterMind.Views;
 
-import MasterMind.Controllers.ContinueController;
+import MasterMind.Controllers.ExitController;
 import MasterMind.Util.IO;
 
-public class ContinueView {
+public class ExitView {
 	
 	private IO io = new IO();
 	
-	public void interact(ContinueController continueController) {
-		continueController.start();
+	public void interact(ExitController controller) {
 
 		char answer;
+		
 		do {
 			answer = io.readChar("Confirm to exit? (s/n): ");
 		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
 	
-		if (continueController.end(answer) == true) {
+		if (controller.exitRun(answer) == true) {
 			io.writeln("Exiting ...");
 			io.writeln("Bye!!");
 		}

@@ -9,7 +9,7 @@ public class SaveView {
 	
 	public void interact(SaveController saveController) {
 		io.writeln("Saving game ...");
-		if (saveController.saveGame()) {
+		if (saveController.save()) {
 			io.writeln(" - Game sucessfully saved.");
 		}
 		else {

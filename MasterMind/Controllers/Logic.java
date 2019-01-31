@@ -9,25 +9,34 @@ public class Logic {
 	
 	private MenuController menuController;
 	private NewGameController newGameController;	
-	private PlayController readController;
+	private PlayController playController;
 	private UndoController undoController;
 	private RedoController redoController;
 	private SaveController saveController;
 	private RestoreController restoreController;
-	private ContinueController continueController;
+	private ExitController exitController;
 	private AbortController abortController;
 	
 	public Logic() {
 		game = new GameLocal();
 		menuController = new MenuController(game);
 		newGameController = new NewGameController(game);
-		readController = new PlayController(game);
+		playController = new PlayController(game);
 		undoController = new UndoController(game);
 		redoController = new RedoController(game);
 		saveController = new SaveController(game, "JSON");
 		restoreController = new RestoreController(game, "JSON");
-		continueController = new ContinueController(game);
+		exitController = new ExitController(game);
 		abortController = new AbortController(game);
+		
+		menuController.add(newGameController);
+		menuController.add(playController);
+		menuController.add(undoController);
+		menuController.add(redoController);
+		menuController.add(saveController);
+		menuController.add(restoreController);
+		menuController.add(exitController);
+		menuController.add(abortController);
 	}
 
 	public OperationController getController() {
@@ -39,7 +48,7 @@ public class Logic {
 			return newGameController;
 			
 			case PLAYING:
-			return readController;
+			return playController;
 
 			case UNDOING:
 			return undoController;
@@ -54,7 +63,7 @@ public class Logic {
 			return restoreController;
 
 			case CONTINUE:
-			return continueController;
+			return exitController;
 			
 			case ABORT:
 			return abortController;

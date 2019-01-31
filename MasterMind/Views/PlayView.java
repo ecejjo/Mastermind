@@ -14,11 +14,15 @@ public class PlayView {
 						
     	if (playController.isWinner())
     	{
+    		io.writeln("==================");
     		io.writeln("Matches. You win!!");
+    		io.writeln("==================");
     	}
     	else if ( ! playController.moreTries())
     	{
+    		io.writeln("=========================");
     		io.writeln("End of tries. You loose!!");
+    		io.writeln("=========================");
     	}
     	
    		playController.done();

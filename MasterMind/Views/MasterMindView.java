@@ -7,7 +7,7 @@ import MasterMind.Controllers.RedoController;
 import MasterMind.Controllers.RestoreController;
 import MasterMind.Controllers.SaveController;
 import MasterMind.Controllers.AbortController;
-import MasterMind.Controllers.ContinueController;
+import MasterMind.Controllers.ExitController;
 import MasterMind.Controllers.MenuController;
 import MasterMind.Controllers.OperationController;
 import MasterMind.Controllers.OperationControllerVisitor;
@@ -21,7 +21,7 @@ public class MasterMindView implements OperationControllerVisitor {
 	private RedoView redoView;
 	private SaveView saveView;
 	private RestoreView restoreView;
-	private ContinueView continueView;
+	private ExitView continueView;
 	private AbortView abortView;
 	
 	public MasterMindView() {
@@ -32,7 +32,7 @@ public class MasterMindView implements OperationControllerVisitor {
 		redoView = new RedoView();
 		saveView = new SaveView();
 		restoreView = new RestoreView();
-		continueView = new ContinueView();
+		continueView = new ExitView();
 		abortView = new AbortView();
 	}
 
@@ -77,7 +77,7 @@ public class MasterMindView implements OperationControllerVisitor {
 	}
 
 	@Override
-	public void visit(ContinueController continueController) {
+	public void visit(ExitController continueController) {
 		continueView.interact(continueController);
 	}
 

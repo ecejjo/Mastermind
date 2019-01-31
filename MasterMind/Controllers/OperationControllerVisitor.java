@@ -9,7 +9,7 @@ public interface OperationControllerVisitor {
 	void visit(RedoController redoController);
 	void visit(SaveController saveController);
 	void visit(RestoreController restoreController);
-	void visit(ContinueController continueController);
+	void visit(ExitController continueController);
 	void visit(AbortController abortController);
 
 }

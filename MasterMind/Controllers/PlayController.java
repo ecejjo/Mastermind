@@ -35,5 +35,46 @@ public class PlayController extends OperationController {
 	
 	public void done() {
 		this.game.setState(State.MENU);
+	}
+
+	@Override
+	public void newGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playGame() {
+		masterMindView.interact(this);
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void redo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void restoreGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void abortGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exitGame() {
+		// TODO Auto-generated method stub
+		
 	}	
 }

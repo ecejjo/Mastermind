@@ -20,7 +20,54 @@ public class SaveController extends OperationController {
 		operationControllerVisitor.visit(this);		
 	}
 	
-	public boolean saveGame() {
+	public boolean save() {
 		return (impl.saveGame(FILENAME));
+	}
+
+	@Override
+	public void newGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void redo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveGame() {
+		masterMindView.interact(this);
+	}
+
+	@Override
+	public void restoreGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void abortGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exitGame() {
+		// TODO Auto-generated method stub
+		
 	}
 }

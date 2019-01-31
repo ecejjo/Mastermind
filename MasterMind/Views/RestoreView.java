@@ -9,7 +9,7 @@ public class RestoreView {
 	
 	public void interact(RestoreController restoreController) {
 		io.writeln("Restoring game ...");
-		if (restoreController.restoreGame()) {
+		if (restoreController.restore()) {
 			io.writeln(" - Game sucessfully restored.");
 		}
 		else {

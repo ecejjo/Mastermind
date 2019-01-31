@@ -20,7 +20,54 @@ public class RestoreController extends OperationController {
 		operationControllerVisitor.visit(this);		
 	}
 	
-	public boolean restoreGame() {
+	public boolean restore() {
 		return (impl.restoreGame(FILENAME));
+	}
+
+	@Override
+	public void newGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void redo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void restoreGame() {
+		masterMindView.interact(this);
+	}
+
+	@Override
+	public void abortGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exitGame() {
+		// TODO Auto-generated method stub
+		
 	}
 }
