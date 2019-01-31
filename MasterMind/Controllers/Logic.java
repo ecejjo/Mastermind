@@ -14,8 +14,8 @@ public class Logic {
 	private RedoController redoController;
 	private SaveController saveController;
 	private RestoreController restoreController;
-	private ExitController exitController;
-	private AbortController abortController;
+	private ExitGameController exitGameController;
+	private ExitAppController exitAppController;
 	
 	public Logic() {
 		game = new GameLocal();
@@ -26,8 +26,8 @@ public class Logic {
 		redoController = new RedoController(game);
 		saveController = new SaveController(game, "JSON");
 		restoreController = new RestoreController(game, "JSON");
-		exitController = new ExitController(game);
-		abortController = new AbortController(game);
+		exitAppController = new ExitAppController(game);
+		exitGameController = new ExitGameController(game);
 		
 		menuController.add(newGameController);
 		menuController.add(playController);
@@ -35,8 +35,8 @@ public class Logic {
 		menuController.add(redoController);
 		menuController.add(saveController);
 		menuController.add(restoreController);
-		menuController.add(exitController);
-		menuController.add(abortController);
+		menuController.add(exitAppController);
+		menuController.add(exitGameController);
 	}
 
 	public OperationController getController() {

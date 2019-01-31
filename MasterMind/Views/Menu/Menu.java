@@ -11,13 +11,13 @@ public class Menu {
 
 	protected List<Command> commandList;
 
-	private ExitCommand exitCommand;
+	private ExitAppCommand exitCommand;
 	
 	private MenuController menuController;
 
 	public Menu() {
 		this.commandList = new ArrayList<Command>();
-		exitCommand = new ExitCommand();
+		exitCommand = new ExitAppCommand();
 	}
 
 	protected void setCommands() {
@@ -49,7 +49,7 @@ public class Menu {
 		}
 		
 		if ( this.menuController.inGame()) {
-			this.commandList.add(new AbortGameCommand());
+			this.commandList.add(new ExitGameCommand());
 		}
 		
 		if ( ! this.menuController.inGame()) {

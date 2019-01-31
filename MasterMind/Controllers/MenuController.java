@@ -97,17 +97,17 @@ public class MenuController extends OperationController {
 		}
 	}
 	
-	public void abortGame() {
-		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).abortGame();
-		}
-	}
-	
 	public void exitGame() {
 		assert this.game.getState() == State.MENU;
 		for (int i = 0; i < this.controllersList.size(); i++) {
 			this.controllersList.get(i).exitGame();
+		}
+	}
+	
+	public void exitApp() {
+		assert this.game.getState() == State.MENU;
+		for (int i = 0; i < this.controllersList.size(); i++) {
+			this.controllersList.get(i).exitApp();
 		}
 	}
 }

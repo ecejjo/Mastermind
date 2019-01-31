@@ -3,9 +3,9 @@ package MasterMind.Controllers;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
-public class ExitController extends OperationController {
+public class ExitAppController extends OperationController {
 
-	protected ExitController(GameInterface game) {
+	protected ExitAppController(GameInterface game) {
 		super(game);
 	}
 	
@@ -14,7 +14,7 @@ public class ExitController extends OperationController {
 		operationControllerVisitor.visit(this);		
 	}
 	
-	public boolean exitRun(char answer) {		
+	public boolean exitAppRun(char answer) {		
 		if ( (answer == 's') || (answer == 'S') ) {
 			this.game.setState(State.EXIT);
 			return true;
@@ -61,13 +61,13 @@ public class ExitController extends OperationController {
 	}
 
 	@Override
-	public void abortGame() {
+	public void exitGame() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void exitGame() {
+	public void exitApp() {
 		masterMindView.interact(this);
 	}
 }

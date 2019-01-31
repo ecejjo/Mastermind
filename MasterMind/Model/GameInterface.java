@@ -28,7 +28,7 @@ public interface GameInterface {
 
 	int getTries();
 
-	void abortGame();
+	void exitGame();
 	
 	boolean inGame();
 }

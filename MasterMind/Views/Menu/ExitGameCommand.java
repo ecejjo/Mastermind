@@ -1,9 +1,9 @@
 package MasterMind.Views.Menu;
 
-class ExitCommand extends Command {
-		
-	protected ExitCommand() {
-		super("Exit");
+class ExitGameCommand extends Command {
+	
+	protected ExitGameCommand() {
+		super("Exit game");
 	}
 
 	@Override

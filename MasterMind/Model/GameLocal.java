@@ -92,7 +92,7 @@ public class GameLocal implements GameInterface, Serializable {
 		careTaker = new CareTaker();
 	}
 	
-	public void abortGame() {
+	public void exitGame() {
 		this.clear();		
 	}
 	

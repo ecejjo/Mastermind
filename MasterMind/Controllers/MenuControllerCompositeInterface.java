@@ -7,7 +7,7 @@ public interface MenuControllerCompositeInterface {
 	public void redo();
 	public void saveGame();
 	public void restoreGame();
-	public void abortGame();
 	public void exitGame();
+	public void exitApp();
 	
 }

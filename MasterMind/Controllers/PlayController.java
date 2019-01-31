@@ -66,13 +66,13 @@ public class PlayController extends OperationController {
 	}
 
 	@Override
-	public void abortGame() {
+	public void exitGame() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void exitGame() {
+	public void exitApp() {
 		// TODO Auto-generated method stub
 		
 	}	

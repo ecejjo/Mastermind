@@ -1,15 +1,15 @@
 package MasterMind.Controllers;
 
 public interface OperationControllerVisitor {
-	
-	void visit(NewGameController startController);
-	void visit(MenuController menuController);
-	void visit(PlayController readController);	
-	void visit(UndoController undoController);
-	void visit(RedoController redoController);
-	void visit(SaveController saveController);
-	void visit(RestoreController restoreController);
-	void visit(ExitController continueController);
-	void visit(AbortController abortController);
+
+	void visit(MenuController controller);
+	void visit(NewGameController controller);
+	void visit(PlayController controller);	
+	void visit(UndoController controller);
+	void visit(RedoController controller);
+	void visit(SaveController controller);
+	void visit(RestoreController controller);
+	void visit(ExitAppController controller);
+	void visit(ExitGameController controller);
 
 }
