@@ -9,7 +9,7 @@ public class RedoView {
 	
 	public void interact(RedoController redoController) {
 		io.writeln("Redoing previous try ...");
-		if (redoController.run()) {
+		if (redoController.redo()) {
 			io.writeln(" - Redo sucesss.");
 		}
 		else {

@@ -9,7 +9,7 @@ public class UndoView {
 	
 	public void interact(UndoController undoController) {
 		io.writeln("Undoing previous try ...");
-		if (undoController.run()) {
+		if (undoController.undo()) {
 			io.writeln(" - Undo sucesss.");
 		}
 		else {

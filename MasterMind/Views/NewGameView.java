@@ -9,6 +9,6 @@ public class NewGameView {
 	
 	public void interact(NewGameController newGameController) {
 		io.writeln("New game!!");
-		newGameController.newGameRun();
+		newGameController.newGame();
 	}
 }

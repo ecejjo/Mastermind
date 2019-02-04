@@ -9,7 +9,7 @@ public class RedoController extends OperationController {
 		super(game);
 	}
 	
-	public boolean run() {
+	public boolean redo() {
 		this.game.setState(State.MENU);
 		if (game.getCareTaker().nextExists()) {
 			this.restoreFromMemento(game.getCareTaker().getNext());
@@ -21,52 +21,5 @@ public class RedoController extends OperationController {
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
-	}
-
-	@Override
-	public void newGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void playGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void redo() {
-		masterMindView.interact(this);
-	}
-
-	@Override
-	public void saveGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void restoreGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitApp() {
-		// TODO Auto-generated method stub
-		
 	}
 }

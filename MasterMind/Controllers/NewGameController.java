@@ -14,56 +14,9 @@ public class NewGameController extends OperationController {
 		operationControllerVisitor.visit(this);		
 	}
 
-	public void newGameRun() {
+	public void newGame() {
 		this.game.newGame();
 		this.game.setState(State.MENU);
 		this.game.getCareTaker().add(this.saveToMemento());
-	}
-
-	@Override
-	public void newGame() {
-		masterMindView.interact(this);
-	}
-
-	@Override
-	public void playGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void redo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void saveGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void restoreGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitApp() {
-		// TODO Auto-generated method stub
-		
 	}
 }

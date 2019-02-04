@@ -29,14 +29,14 @@ public class Logic {
 		exitAppController = new ExitAppController(game);
 		exitGameController = new ExitGameController(game);
 		
-		menuController.add(newGameController);
-		menuController.add(playController);
-		menuController.add(undoController);
-		menuController.add(redoController);
-		menuController.add(saveController);
-		menuController.add(restoreController);
-		menuController.add(exitAppController);
-		menuController.add(exitGameController);
+		menuController.setNewGameController(newGameController);
+		menuController.setPlayController(playController);
+		menuController.setUndoController(undoController);
+		menuController.setRedoController(redoController);
+		menuController.setSaveController(saveController);
+		menuController.setRestoreController(restoreController);
+		menuController.setExitAppController(exitAppController);
+		menuController.setExitGameController(exitGameController);
 	}
 
 	public OperationController getController() {

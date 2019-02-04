@@ -85,4 +85,8 @@ public class MasterMindView implements OperationControllerVisitor {
 	public void visit(ExitGameController controller) {
 		exitGameView.interact(controller);		
 	}
+	
+	public ExitAppView getExitAppView() {
+		return exitAppView;
+	}
 }

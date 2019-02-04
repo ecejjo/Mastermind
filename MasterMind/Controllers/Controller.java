@@ -4,8 +4,15 @@ import MasterMind.Model.GameLocal;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.ProposedCombination;
 import MasterMind.Model.SecretCombination;
+import MasterMind.Views.MasterMindView;
 
 public abstract class Controller {
+	
+	MasterMindView masterMindView;
+	
+	public void setMasterMindView(MasterMindView view) {
+		masterMindView = view;
+	}
 
 	protected GameInterface game;
 	

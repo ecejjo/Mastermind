@@ -9,7 +9,7 @@ public class UndoController extends OperationController {
 		super(game);
 	}
 	
-	public boolean run() {
+	public boolean undo() {
 		this.game.setState(State.MENU);
 		if (game.getCareTaker().previousExists()) {
 			this.restoreFromMemento(game.getCareTaker().getPrevious());
@@ -22,52 +22,4 @@ public class UndoController extends OperationController {
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
 	}
-
-	@Override
-	public void newGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void playGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void undo() {
-		masterMindView.interact(this);
-	}
-
-	@Override
-	public void redo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void saveGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void restoreGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitApp() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

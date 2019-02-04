@@ -1,50 +1,40 @@
 package MasterMind.Controllers;
 
-import java.util.ArrayList;
-
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 import MasterMind.Views.MasterMindView;
 
 public class MenuController extends OperationController {
 	
-	private ArrayList<OperationController> controllersList;
+	private NewGameController newGameController;	
+	private PlayController playController;
+	private UndoController undoController;
+	private RedoController redoController;
+	private SaveController saveController;
+	private RestoreController restoreController;
+	private ExitGameController exitGameController;
+	private ExitAppController exitAppController;
 		
 	public MenuController(GameInterface game) {
 		super(game);
-		controllersList = new ArrayList<OperationController>();
-	}
-
-	public void add(OperationController controller)
-	{
-		controllersList.add(controller);
 	}
 	
 	@Override
 	public void setMasterMindView(MasterMindView view) {
 		masterMindView = view;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).setMasterMindView(view);
-		}
+		newGameController.setMasterMindView(view);
+		playController.setMasterMindView(view);
+		undoController.setMasterMindView(view);
+		redoController.setMasterMindView(view);
+		saveController.setMasterMindView(view);
+		restoreController.setMasterMindView(view);
+		exitGameController.setMasterMindView(view);
+		exitAppController.setMasterMindView(view);
 	}
-	
+			
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
-	}
-	
-	public void newGame() {
-		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).newGame();
-		}
-	}
-
-	public void playGame() {
-		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).playGame();
-		}
 	}
 	
 	public boolean inGame() {
@@ -59,13 +49,20 @@ public class MenuController extends OperationController {
 	public boolean isWinner() {
 		return game.isWinner();
 	}
+	
+	public void newGame() {
+		assert this.game.getState() == State.MENU;
+		newGameController.newGame();
+	}
+
+	public void playGame() {
+		assert this.game.getState() == State.MENU;
+		playController.playGame();
+	}
 
 	public void undo() {
 		assert this.game.getState() == State.MENU;
-		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).undo();
-		}
+		undoController.undo();
 	}
 	
 	public boolean isUndoable() {
@@ -74,9 +71,7 @@ public class MenuController extends OperationController {
 
 	public void redo() {
 		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).redo();
-		}
+		redoController.redo();
 	}
 
 	public boolean isRedoable() {
@@ -85,29 +80,85 @@ public class MenuController extends OperationController {
 
 	public void saveGame() {
 		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).saveGame();
-		}
+		saveController.saveGame();
 	}
 	
 	public void restoreGame() {
 		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).restoreGame();
-		}
+		restoreController.restore();
 	}
 	
 	public void exitGame() {
 		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).exitGame();
-		}
+		exitGameController.exitGame();
 	}
 	
 	public void exitApp() {
 		assert this.game.getState() == State.MENU;
-		for (int i = 0; i < this.controllersList.size(); i++) {
-			this.controllersList.get(i).exitApp();
-		}
+		exitAppController.exitApp();
+	}
+
+	public NewGameController getNewGameController() {
+		return newGameController;
+	}
+
+	public void setNewGameController(NewGameController newGameController) {
+		this.newGameController = newGameController;
+	}
+
+	public PlayController getPlayController() {
+		return playController;
+	}
+
+	public void setPlayController(PlayController playController) {
+		this.playController = playController;
+	}
+
+	public UndoController getUndoController() {
+		return undoController;
+	}
+
+	public void setUndoController(UndoController undoController) {
+		this.undoController = undoController;
+	}
+
+	public RedoController getRedoController() {
+		return redoController;
+	}
+
+	public void setRedoController(RedoController redoController) {
+		this.redoController = redoController;
+	}
+
+	public SaveController getSaveController() {
+		return saveController;
+	}
+
+	public void setSaveController(SaveController saveController) {
+		this.saveController = saveController;
+	}
+
+	public RestoreController getRestoreController() {
+		return restoreController;
+	}
+
+	public void setRestoreController(RestoreController restoreController) {
+		this.restoreController = restoreController;
+	}
+
+	public ExitGameController getExitGameController() {
+		return exitGameController;
+	}
+
+	public void setExitGameController(ExitGameController exitGameController) {
+		this.exitGameController = exitGameController;
+	}
+
+	public ExitAppController getExitAppController() {
+		return exitAppController;
+	}
+
+	public void setExitAppController(ExitAppController exitAppController) {
+		this.exitAppController = exitAppController;
 	}
 }

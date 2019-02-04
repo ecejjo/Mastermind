@@ -3,7 +3,7 @@ package MasterMind.Controllers;
 import MasterMind.Model.GameInterface;
 import MasterMind.Views.MasterMindView;
 
-public abstract class OperationController extends Controller implements MenuControllerCompositeInterface {
+public abstract class OperationController extends Controller  {
 	
 	MasterMindView masterMindView;
 
@@ -15,5 +15,9 @@ public abstract class OperationController extends Controller implements MenuCont
 
 	public void setMasterMindView(MasterMindView view) {
 		masterMindView = view;
+	}
+	
+	public MasterMindView getMasterMindView() {
+		return masterMindView;
 	}
 }

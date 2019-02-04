@@ -1,7 +1,6 @@
 package MasterMind.Views;
 
 import MasterMind.Model.SecretCombination;
-import MasterMind.Util.IO;
 
 public class SecretCombinationView {
 	

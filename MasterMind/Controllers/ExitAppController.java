@@ -23,50 +23,7 @@ public class ExitAppController extends OperationController {
 			return false;
 		}		
 	}
-
-	@Override
-	public void newGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void playGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void redo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void saveGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void restoreGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
+	
 	public void exitApp() {
 		masterMindView.interact(this);
 	}
