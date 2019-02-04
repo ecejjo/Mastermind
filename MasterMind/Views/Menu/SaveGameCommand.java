@@ -8,6 +8,7 @@ class SaveGameCommand extends Command {
 
 	@Override
 	public void execute() {
+		this.menuView.getSaveView().interact(menuController.getSaveController());
 		menuController.saveGame();
 	}
 }

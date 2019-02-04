@@ -8,6 +8,7 @@ class ExitGameCommand extends Command {
 
 	@Override
 	public void execute() {
+		this.menuView.getExitGameView().interact(menuController.getExitGameController());
 		menuController.exitGame();
 	}
 }

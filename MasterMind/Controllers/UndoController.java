@@ -3,7 +3,7 @@ package MasterMind.Controllers;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
-public class UndoController extends OperationController {
+public class UndoController extends Controller {
 	
 	protected UndoController(GameInterface game) {
 		super(game);
@@ -16,10 +16,5 @@ public class UndoController extends OperationController {
 			return true;
 		}
 		return false;
-	}
-		
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
 	}
 }

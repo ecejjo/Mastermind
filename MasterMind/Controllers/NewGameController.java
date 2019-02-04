@@ -3,15 +3,10 @@ package MasterMind.Controllers;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
-public class NewGameController extends OperationController {
+public class NewGameController extends Controller {
 	
 	protected NewGameController(GameInterface game) {
 		super(game);
-	}
-			
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
 	}
 
 	public void newGame() {

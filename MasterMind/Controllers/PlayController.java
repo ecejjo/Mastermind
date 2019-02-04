@@ -4,20 +4,11 @@ import MasterMind.Model.GameInterface;
 import MasterMind.Model.ProposedCombination;
 import MasterMind.Model.State;
 
-public class PlayController extends OperationController {
+public class PlayController extends Controller {
 		
 	public PlayController(GameInterface game) {
 		super(game);		
 	}	
-	
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
-	}
-	
-	public void playGame() {
-		masterMindView.interact(this);
-	}
 	
 	public void add(ProposedCombination proposedCombination) {
 		this.game.add(proposedCombination);
@@ -38,5 +29,9 @@ public class PlayController extends OperationController {
 	
 	public void done() {
 		this.game.setState(State.MENU);
+	}
+
+	public void playGame() {
+		// ? masterMindView.interact(this);		
 	}
 }

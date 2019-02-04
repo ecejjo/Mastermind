@@ -2,7 +2,7 @@ package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
 
-public class SaveController extends OperationController {
+public class SaveController extends Controller {
 	
     private SaveControllerImpl impl;
 		
@@ -14,11 +14,6 @@ public class SaveController extends OperationController {
             impl = new SaveBinaryController(game);
         }
     }
-
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
-	}
 	
 	public boolean saveGame() {
 		return (impl.saveGame(FILENAME));

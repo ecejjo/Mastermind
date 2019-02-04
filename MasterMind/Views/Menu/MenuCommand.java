@@ -6,16 +6,19 @@ import java.util.List;
 import MasterMind.Controllers.MenuController;
 import MasterMind.Util.IO;
 import MasterMind.Util.LimitedIntDialog;
+import MasterMind.Views.MenuView;
 
-public class Menu {
+public class MenuCommand {
 
 	protected List<Command> commandList;
 
 	private ExitAppCommand exitCommand;
 	
+	private MenuView menuView;
+	
 	private MenuController menuController;
 
-	public Menu() {
+	public MenuCommand() {
 		this.commandList = new ArrayList<Command>();
 		exitCommand = new ExitAppCommand();
 	}
@@ -63,13 +66,21 @@ public class Menu {
 		}
 	}
 
-	public void execute(MenuController menuController) {
+	public void execute(MenuView menuView, MenuController menuController) {
 		this.menuController = menuController;
 		this.setCommands();
+		this.setView(menuView);
 		this.setController(menuController);
 		this.write();
 		int option = this.getOption();
 		commandList.get(option).execute();
+	}
+
+	private void setView(MenuView menuView) {
+		this.menuView = menuView;
+		for(Command command : commandList){
+			command.setView(this.menuView);
+		}
 	}
 
 	private void write() {

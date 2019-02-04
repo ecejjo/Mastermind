@@ -8,6 +8,7 @@ class ExitAppCommand extends Command {
 
 	@Override
 	public void execute() {
+		this.menuView.getExitAppView().interact(menuController.getExitAppController());
 		menuController.exitApp();
 	}
 }

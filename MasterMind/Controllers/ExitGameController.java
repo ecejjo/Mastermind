@@ -3,15 +3,10 @@ package MasterMind.Controllers;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
-public class ExitGameController extends OperationController {
+public class ExitGameController extends Controller {
 
 	protected ExitGameController(GameInterface game) {
 		super(game);
-	}
-	
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
 	}
 		
 	public boolean exitGameRun(char answer) {		
@@ -23,8 +18,9 @@ public class ExitGameController extends OperationController {
 			return false;
 		}		
 	}
-	
+
 	public void exitGame() {
-		masterMindView.interact(this);
+		// TODO Auto-generated method stub
+		
 	}
 }

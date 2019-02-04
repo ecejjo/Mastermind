@@ -2,7 +2,7 @@ package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
 
-public class RestoreController extends OperationController {
+public class RestoreController extends Controller {
 	
     private RestoreControllerImpl impl;
 
@@ -14,11 +14,6 @@ public class RestoreController extends OperationController {
             impl = new RestoreBinaryController(game);
         }
     }
-
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
-	}
 	
 	public boolean restore() {
 		return (impl.restoreGame(FILENAME));

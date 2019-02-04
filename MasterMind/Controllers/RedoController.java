@@ -3,7 +3,7 @@ package MasterMind.Controllers;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
-public class RedoController extends OperationController {
+public class RedoController extends Controller {
 	
 	protected RedoController(GameInterface game) {
 		super(game);
@@ -16,10 +16,5 @@ public class RedoController extends OperationController {
 			return true;
 		}
 		return false;
-	}
-		
-	@Override
-	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
 	}
 }
