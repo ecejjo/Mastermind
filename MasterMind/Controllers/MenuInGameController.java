@@ -4,34 +4,38 @@ import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 import MasterMind.Views.MasterMindView;
 
-public abstract class MenuController extends OperationController {
+public class MenuInGameController extends MenuController {
 	
-	private NewGameController newGameController;	
 	private PlayController playController;
 	private UndoController undoController;
 	private RedoController redoController;
 	private SaveController saveController;
-	private RestoreController restoreController;
 	private ExitGameController exitGameController;
-	private ExitAppController exitAppController;
 		
-	public MenuController(GameInterface game) {
+	public MenuInGameController(GameInterface game) {
 		super(game);
+		playController = new PlayController(game);
+		undoController = new UndoController(game);
+		redoController = new RedoController(game);
+		saveController = new SaveController(game, "JSON");
+		exitGameController = new ExitGameController(game);
 	}
 	
 	@Override
 	public void setMasterMindView(MasterMindView view) {
 		masterMindView = view;
-		newGameController.setMasterMindView(view);
 		playController.setMasterMindView(view);
 		undoController.setMasterMindView(view);
 		redoController.setMasterMindView(view);
 		saveController.setMasterMindView(view);
-		restoreController.setMasterMindView(view);
 		exitGameController.setMasterMindView(view);
-		exitAppController.setMasterMindView(view);
 	}
-
+	
+	@Override
+	public void accept(OperationControllerVisitor operationControllerVisitor) {
+		operationControllerVisitor.visit(this);		
+	}
+				
 	public boolean inGame() {
 		return this.game.getState() == State.MENU_IN_GAME;
 	}
@@ -43,14 +47,9 @@ public abstract class MenuController extends OperationController {
 	public boolean isWinner() {
 		return game.isWinner();
 	}
-	
-	public void newGame() {
-		assert this.game.getState() == State.MENU_NOT_IN_GAME;
-		newGameController.newGame();
-	}
 
 	public void playGame() {
-		assert this.game.getState() == State.MENU_IN_GAME;
+		assert this.game.getState() == State.MENU_NOT_IN_GAME;
 		playController.playGame();
 	}
 
@@ -77,29 +76,11 @@ public abstract class MenuController extends OperationController {
 		saveController.saveGame();
 	}
 	
-	public void restoreGame() {
-		assert this.game.getState() == State.MENU_NOT_IN_GAME;
-		restoreController.restore();
-	}
-	
 	public void exitGame() {
 		assert this.game.getState() == State.MENU_IN_GAME;
 		exitGameController.exitGame();
 	}
 	
-	public void exitApp() {
-		assert this.game.getState() == State.MENU_NOT_IN_GAME;
-		exitAppController.exitApp();
-	}
-
-	public NewGameController getNewGameController() {
-		return newGameController;
-	}
-
-	public void setNewGameController(NewGameController newGameController) {
-		this.newGameController = newGameController;
-	}
-
 	public PlayController getPlayController() {
 		return playController;
 	}
@@ -132,27 +113,11 @@ public abstract class MenuController extends OperationController {
 		this.saveController = saveController;
 	}
 
-	public RestoreController getRestoreController() {
-		return restoreController;
-	}
-
-	public void setRestoreController(RestoreController restoreController) {
-		this.restoreController = restoreController;
-	}
-
 	public ExitGameController getExitGameController() {
 		return exitGameController;
 	}
 
 	public void setExitGameController(ExitGameController exitGameController) {
 		this.exitGameController = exitGameController;
-	}
-
-	public ExitAppController getExitAppController() {
-		return exitAppController;
-	}
-
-	public void setExitAppController(ExitAppController exitAppController) {
-		this.exitAppController = exitAppController;
 	}
 }

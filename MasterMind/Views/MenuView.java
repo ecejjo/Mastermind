@@ -1,33 +1,17 @@
 package MasterMind.Views;
 
-import MasterMind.Controllers.MenuController;
-import MasterMind.Views.Menu.MenuCommand;
-
 public class MenuView {
 
-	private NewGameView startView;
-	private PlayView playView;
-	private UndoView undoView;
-	private RedoView redoView;
-	private SaveView saveView;
-	private RestoreView restoreView;
-	private ExitAppView exitAppView;
-	private ExitGameView exitGameView;
+	protected NewGameView startView;
+	protected PlayView playView;
+	protected UndoView undoView;
+	protected RedoView redoView;
+	protected SaveView saveView;
+	protected RestoreView restoreView;
+	protected ExitGameView exitGameView;
+	protected ExitAppView exitAppView;
 
 	public MenuView() {
-		setStartView(new NewGameView());
-		setPlayView(new PlayView());
-		setUndoView(new UndoView());
-		setRedoView(new RedoView());
-		setSaveView(new SaveView());
-		setRestoreView(new RestoreView());
-		setExitAppView(new ExitAppView());
-		setExitGameView(new ExitGameView());
-	}
-
-	public void interact(MenuController menuController) {
-		new GameView(menuController).print();
-		new MenuCommand().execute(this, menuController);						
 	}
 
 	public NewGameView getStartView() {

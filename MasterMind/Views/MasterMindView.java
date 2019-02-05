@@ -1,15 +1,18 @@
 package MasterMind.Views;
 
-import MasterMind.Controllers.MenuController;
+import MasterMind.Controllers.MenuInGameController;
+import MasterMind.Controllers.MenuNotInGameController;
 import MasterMind.Controllers.OperationController;
 import MasterMind.Controllers.OperationControllerVisitor;
 
 public class MasterMindView implements OperationControllerVisitor {
 	
-	private MenuView menuView;
+	private MenuNotInGameView menuNotInGameView;
+	private MenuInGameView menuInGameView;
 	
 	public MasterMindView() {
-		menuView = new MenuView();
+		menuNotInGameView = new MenuNotInGameView();
+		menuInGameView = new MenuInGameView();
 	}
 
 	public void interact(OperationController operationController) {
@@ -18,7 +21,12 @@ public class MasterMindView implements OperationControllerVisitor {
 	}
 	
 	@Override
-	public void visit(MenuController controller) {
-		menuView.interact(controller);
+	public void visit(MenuNotInGameController controller) {
+		menuNotInGameView.interact(controller);
+	}
+
+	@Override
+	public void visit(MenuInGameController controller) {
+		menuInGameView.interact(controller);		
 	}
 }

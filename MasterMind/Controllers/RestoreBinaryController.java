@@ -18,7 +18,7 @@ public class RestoreBinaryController implements RestoreControllerImpl {
 	}
 
 	public boolean restoreGame(String filename) {
-		this.game.setState(State.MENU);
+		this.game.setState(State.MENU_IN_GAME);
 		try {
 			FileInputStream fis = new FileInputStream(new File(filename + ".bin"));
 			ObjectInputStream ois = new ObjectInputStream(fis);

@@ -20,7 +20,7 @@ public class RestoreJsonController implements RestoreControllerImpl {
 	}
 	
 	public boolean restoreGame(String filename) {
-		this.game.setState(State.MENU);
+		this.game.setState(State.MENU_IN_GAME);
 		try {
 			GsonBuilder builder = new GsonBuilder();
 			builder.setPrettyPrinting().serializeNulls();

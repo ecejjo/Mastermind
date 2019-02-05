@@ -21,7 +21,7 @@ public class SaveJsonController implements SaveControllerImpl {
 	}
 	
 	public boolean saveGame(String filename) {
-		this.game.setState(State.MENU);
+		this.game.setState(State.MENU_IN_GAME);
 		try {				
 			GsonBuilder builder = new GsonBuilder();
 			builder.setPrettyPrinting().serializeNulls();

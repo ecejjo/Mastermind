@@ -11,7 +11,7 @@ public class NewGameController extends Controller {
 
 	public void newGame() {
 		this.game.newGame();
-		this.game.setState(State.MENU);
+		this.game.setState(State.MENU_IN_GAME);
 		this.game.getCareTaker().add(this.saveToMemento());
 	}
 }

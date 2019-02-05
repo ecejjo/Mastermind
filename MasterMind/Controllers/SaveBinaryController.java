@@ -18,7 +18,7 @@ public class SaveBinaryController implements SaveControllerImpl {
 	}
 	
 	public boolean saveGame(String filename) {
-		this.game.setState(State.MENU);
+		this.game.setState(State.MENU_IN_GAME);
 		try {
 			FileOutputStream fos = new FileOutputStream(new File(filename + ".bin"));
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
