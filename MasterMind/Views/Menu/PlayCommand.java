@@ -9,6 +9,5 @@ class PlayCommand extends Command {
 	@Override
 	public void execute() {
 		this.menuView.getPlayView().interact(menuController.getPlayController());
-		menuController.playGame();
 	}
 }

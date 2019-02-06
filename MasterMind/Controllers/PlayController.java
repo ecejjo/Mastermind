@@ -30,8 +30,4 @@ public class PlayController extends Controller {
 	public void done() {
 		this.game.setState(State.MENU_IN_GAME);
 	}
-
-	public void playGame() {
-		// ? masterMindView.interact(this);		
-	}
 }

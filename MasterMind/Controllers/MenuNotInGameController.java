@@ -2,7 +2,6 @@ package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
-import MasterMind.Views.MasterMindView;
 
 public class MenuNotInGameController extends MenuController {
 	
@@ -15,14 +14,6 @@ public class MenuNotInGameController extends MenuController {
 		newGameController = new NewGameController(game);
 		restoreController = new RestoreController(game, "JSON");
 		exitAppController = new ExitAppController(game);
-	}
-	
-	@Override
-	public void setMasterMindView(MasterMindView view) {
-		masterMindView = view;
-		newGameController.setMasterMindView(view);
-		restoreController.setMasterMindView(view);
-		exitAppController.setMasterMindView(view);
 	}
 	
 	@Override

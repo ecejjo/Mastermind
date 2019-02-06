@@ -2,7 +2,6 @@ package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
-import MasterMind.Views.MasterMindView;
 
 public class MenuInGameController extends MenuController {
 	
@@ -22,16 +21,6 @@ public class MenuInGameController extends MenuController {
 	}
 	
 	@Override
-	public void setMasterMindView(MasterMindView view) {
-		masterMindView = view;
-		playController.setMasterMindView(view);
-		undoController.setMasterMindView(view);
-		redoController.setMasterMindView(view);
-		saveController.setMasterMindView(view);
-		exitGameController.setMasterMindView(view);
-	}
-	
-	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		
 	}
@@ -46,11 +35,6 @@ public class MenuInGameController extends MenuController {
 	
 	public boolean isWinner() {
 		return game.isWinner();
-	}
-
-	public void playGame() {
-		assert this.game.getState() == State.MENU_NOT_IN_GAME;
-		playController.playGame();
 	}
 
 	public void undo() {

@@ -2,7 +2,6 @@ package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
-import MasterMind.Views.MasterMindView;
 
 public abstract class MenuController extends OperationController {
 	
@@ -17,19 +16,6 @@ public abstract class MenuController extends OperationController {
 		
 	public MenuController(GameInterface game) {
 		super(game);
-	}
-	
-	@Override
-	public void setMasterMindView(MasterMindView view) {
-		masterMindView = view;
-		newGameController.setMasterMindView(view);
-		playController.setMasterMindView(view);
-		undoController.setMasterMindView(view);
-		redoController.setMasterMindView(view);
-		saveController.setMasterMindView(view);
-		restoreController.setMasterMindView(view);
-		exitGameController.setMasterMindView(view);
-		exitAppController.setMasterMindView(view);
 	}
 
 	public boolean inGame() {
@@ -48,10 +34,10 @@ public abstract class MenuController extends OperationController {
 		assert this.game.getState() == State.MENU_NOT_IN_GAME;
 		newGameController.newGame();
 	}
-
+	
 	public void playGame() {
 		assert this.game.getState() == State.MENU_IN_GAME;
-		playController.playGame();
+		// ? playController.
 	}
 
 	public void undo() {
