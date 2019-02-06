@@ -9,6 +9,5 @@ class NewGameCommand extends Command {
 	@Override
 	public void execute() {
 		this.menuView.getStartView().interact(menuController.getNewGameController());
-		menuController.newGame();
 	}
 }

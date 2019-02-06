@@ -9,6 +9,5 @@ class RedoCommand extends Command {
 	@Override
 	public void execute() {
 		this.menuView.getRedoView().interact(menuController.getRedoController());
-		menuController.redo();
 	}
 }

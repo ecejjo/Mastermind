@@ -9,6 +9,5 @@ class RestoreGameCommand extends Command {
 	@Override
 	public void execute() {
 		this.menuView.getRestoreView().interact(menuController.getRestoreController());
-		menuController.restoreGame();
 	}
 }

@@ -1,27 +1,18 @@
 package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
-import MasterMind.Model.State;
 
 public abstract class MenuController extends OperationController {
 	
-	private NewGameController newGameController;	
-	private PlayController playController;
-	private UndoController undoController;
-	private RedoController redoController;
-	private SaveController saveController;
-	private RestoreController restoreController;
-	private ExitGameController exitGameController;
-	private ExitAppController exitAppController;
-		
-	public MenuController(GameInterface game) {
-		super(game);
-	}
+	protected NewGameController newGameController;	
+	protected PlayController playController;
+	protected UndoController undoController;
+	protected RedoController redoController;
+	protected SaveController saveController;
+	protected RestoreController restoreController;
+	protected ExitGameController exitGameController;
+	protected ExitAppController exitAppController;
 
-	public boolean inGame() {
-		return this.game.getState() == State.MENU_IN_GAME;
-	}
-	
 	public boolean moreTries() {
 		return this.game.moreTries();
 	}
@@ -30,52 +21,16 @@ public abstract class MenuController extends OperationController {
 		return game.isWinner();
 	}
 	
-	public void newGame() {
-		assert this.game.getState() == State.MENU_NOT_IN_GAME;
-		newGameController.newGame();
-	}
-	
-	public void playGame() {
-		assert this.game.getState() == State.MENU_IN_GAME;
-		// ? playController.
-	}
-
-	public void undo() {
-		assert this.game.getState() == State.MENU_IN_GAME;
-		undoController.undo();
-	}
-	
 	public boolean isUndoable() {
 		return this.game.getCareTaker().previousExists();
-	}
-
-	public void redo() {
-		assert this.game.getState() == State.MENU_IN_GAME;
-		redoController.redo();
 	}
 
 	public boolean isRedoable() {
 		return this.game.getCareTaker().nextExists();
 	}
-
-	public void saveGame() {
-		assert this.game.getState() == State.MENU_IN_GAME;
-		saveController.saveGame();
-	}
-	
-	public void restoreGame() {
-		assert this.game.getState() == State.MENU_NOT_IN_GAME;
-		restoreController.restore();
-	}
-	
-	public void exitGame() {
-		assert this.game.getState() == State.MENU_IN_GAME;
-		exitGameController.exitGame();
-	}
-	
-	public void exitApp() {
-		assert this.game.getState() == State.MENU_NOT_IN_GAME;
-		exitAppController.exitApp();
+		
+	public MenuController(GameInterface game) {
+		super(game);
 	}
 
 	public NewGameController getNewGameController() {

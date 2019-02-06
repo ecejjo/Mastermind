@@ -2,34 +2,18 @@
   "state": "MENU_IN_GAME",
   "secretCombination": {
     "colors": [
-      "YELLOW",
-      "RED",
-      "WHITE",
-      "RED"
+      "GREEN",
+      "BLACK",
+      "PINK",
+      "YELLOW"
     ]
   },
   "proposedCombinations": [
     {
       "result": {
         "success": [
-          "BLACK",
-          "BLACK",
-          "BLACK",
-          null
-        ]
-      },
-      "colors": [
-        "YELLOW",
-        "RED",
-        "RED",
-        "RED"
-      ]
-    },
-    {
-      "result": {
-        "success": [
-          "BLACK",
-          "BLACK",
+          null,
+          null,
           null,
           null
         ]
@@ -43,9 +27,10 @@
     },
     null,
     null,
+    null,
     null
   ],
-  "tries": 2,
+  "tries": 1,
   "careTaker": {
     "savedGames": [
       {
@@ -53,10 +38,10 @@
           "state": "MENU_IN_GAME",
           "secretCombination": {
             "colors": [
-              "YELLOW",
-              "RED",
-              "WHITE",
-              "RED"
+              "GREEN",
+              "BLACK",
+              "PINK",
+              "YELLOW"
             ]
           },
           "proposedCombinations": [
@@ -75,71 +60,18 @@
           "state": "MENU_IN_GAME",
           "secretCombination": {
             "colors": [
-              "YELLOW",
-              "RED",
-              "WHITE",
-              "RED"
+              "GREEN",
+              "BLACK",
+              "PINK",
+              "YELLOW"
             ]
           },
           "proposedCombinations": [
             {
               "result": {
                 "success": [
-                  "BLACK",
-                  "BLACK",
-                  "BLACK",
-                  null
-                ]
-              },
-              "colors": [
-                "YELLOW",
-                "RED",
-                "RED",
-                "RED"
-              ]
-            },
-            null,
-            null,
-            null,
-            null
-          ],
-          "tries": 1,
-          "careTaker": null
-        }
-      },
-      {
-        "game": {
-          "state": "MENU_IN_GAME",
-          "secretCombination": {
-            "colors": [
-              "YELLOW",
-              "RED",
-              "WHITE",
-              "RED"
-            ]
-          },
-          "proposedCombinations": [
-            {
-              "result": {
-                "success": [
-                  "BLACK",
-                  "BLACK",
-                  "BLACK",
-                  null
-                ]
-              },
-              "colors": [
-                "YELLOW",
-                "RED",
-                "RED",
-                "RED"
-              ]
-            },
-            {
-              "result": {
-                "success": [
-                  "BLACK",
-                  "BLACK",
+                  null,
+                  null,
                   null,
                   null
                 ]
@@ -153,13 +85,14 @@
             },
             null,
             null,
+            null,
             null
           ],
-          "tries": 2,
+          "tries": 1,
           "careTaker": null
         }
       }
     ],
-    "current": 2
+    "current": 1
   }
 }

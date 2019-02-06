@@ -9,7 +9,7 @@ public class ExitAppController extends Controller {
 		super(game);
 	}
 	
-	public boolean exitAppRun(char answer) {		
+	public boolean exitApp(char answer) {		
 		if ( (answer == 's') || (answer == 'S') ) {
 			this.game.setState(State.EXIT);
 			return true;
@@ -18,9 +18,4 @@ public class ExitAppController extends Controller {
 			return false;
 		}		
 	}
-
-	public void exitApp() {
-		// TODO Auto-generated method stub
-		
-	}	
 }
