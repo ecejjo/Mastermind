@@ -15,7 +15,7 @@ public class ExitGameView {
 			answer = io.readChar("Confirm to exit game? (s/n): ");
 		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
 
-		if (controller.exitGameRun(answer) == true) {
+		if (controller.exitGame(answer) == true) {
 			io.writeln("Game exits ...");
 		}
 		else {

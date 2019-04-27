@@ -15,7 +15,7 @@ public class ExitAppView {
 			answer = io.readChar("Confirm to exit application? (s/n): ");
 		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
 	
-		if (controller.exitAppRun(answer) == true) {
+		if (controller.exitApp(answer) == true) {
 			io.writeln("Application exits ...");
 			io.writeln("Bye!!");
 		}
