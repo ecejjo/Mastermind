@@ -1,5 +1,6 @@
 package MasterMind.Views;
 
+import MasterMind.Controllers.MenuController;
 import MasterMind.Controllers.MenuInGameController;
 import MasterMind.Controllers.MenuNotInGameController;
 import MasterMind.Controllers.OperationController;
@@ -18,6 +19,11 @@ public class MasterMindView implements OperationControllerVisitor {
 	public void interact(OperationController operationController) {
 		assert operationController != null;
 		operationController.accept(this);
+	}
+
+	@Override
+	public void visit(MenuController menuController) {
+		// TODO Auto-generated method stub	
 	}
 	
 	@Override

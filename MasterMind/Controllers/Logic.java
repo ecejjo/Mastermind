@@ -2,31 +2,22 @@ package MasterMind.Controllers;
 
 import MasterMind.Model.GameLocal;
 import MasterMind.Model.GameInterface;
+import MasterMind.Model.State;
 
 public class Logic {
 
-	private GameInterface game; 
-	private MenuNotInGameController menuNotInGameController;
-	private MenuInGameController menuInGameController;
-	
+	private GameInterface game;
+	private MenuController menuController;
+
 	public Logic() {
 		game = new GameLocal();
-		menuNotInGameController = new MenuNotInGameController(game);
-		menuInGameController = new MenuInGameController(game);
+		menuController = new MenuController(game);
+		menuController.addController(State.MENU_IN_GAME, new MenuInGameController(game));
+		menuController.addController(State.MENU_NOT_IN_GAME, new MenuNotInGameController(game));
+		menuController.addController(State.EXIT, null);
 	}
 
 	public OperationController getController() {
-		switch (game.getState()) {
-		
-			case MENU_NOT_IN_GAME:
-			return menuNotInGameController;
-
-			case MENU_IN_GAME:
-			return menuInGameController;
-
-			case EXIT:
-			default:
-			return null;
-		}
-	}	
+		return (OperationController) menuController.getController(game.getState());
+	}
 }

@@ -1,14 +1,15 @@
 package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
+import MasterMind.Model.State;
 
 public class MenuNotInGameController extends MenuController {
 	
 	public MenuNotInGameController(GameInterface game) {
 		super(game);
-		newGameController = new NewGameController(game);
-		restoreController = new RestoreController(game, "JSON");
-		exitAppController = new ExitAppController(game);
+		this.addController(State.NEW_GAME, new NewGameController(game));
+		this.addController(State.RESTORE, new RestoreController(game, "JSON"));
+		this.addController(State.EXIT_APP, new ExitAppController(game));
 	}
 	
 	@Override

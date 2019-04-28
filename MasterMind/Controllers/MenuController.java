@@ -1,17 +1,26 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.GameInterface;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class MenuController extends OperationController {
+import MasterMind.Model.GameInterface;
+import MasterMind.Model.State;
+
+public class MenuController extends OperationController {
 	
-	protected NewGameController newGameController;	
-	protected PlayController playController;
-	protected UndoController undoController;
-	protected RedoController redoController;
-	protected SaveController saveController;
-	protected RestoreController restoreController;
-	protected ExitGameController exitGameController;
-	protected ExitAppController exitAppController;
+	private List<Controller> controllersList;
+
+	public MenuController(GameInterface game) {
+		super(game);
+		controllersList = new ArrayList<Controller>();
+	}
+	
+	public void addController(State menuInGame, Controller controller) {
+		for (int i = controllersList.size(); i < menuInGame.getValue(); i++) {
+			controllersList.add(i, controller);
+		}
+		controllersList.add(menuInGame.getValue(), controller);
+	}
 
 	public boolean moreTries() {
 		return this.game.moreTries();
@@ -28,72 +37,13 @@ public abstract class MenuController extends OperationController {
 	public boolean isRedoable() {
 		return this.game.getCareTaker().nextExists();
 	}
-		
-	public MenuController(GameInterface game) {
-		super(game);
+	
+	public Controller getController(State state) {
+		return this.controllersList.get(state.getValue());
 	}
 
-	public NewGameController getNewGameController() {
-		return newGameController;
-	}
-
-	public void setNewGameController(NewGameController newGameController) {
-		this.newGameController = newGameController;
-	}
-
-	public PlayController getPlayController() {
-		return playController;
-	}
-
-	public void setPlayController(PlayController playController) {
-		this.playController = playController;
-	}
-
-	public UndoController getUndoController() {
-		return undoController;
-	}
-
-	public void setUndoController(UndoController undoController) {
-		this.undoController = undoController;
-	}
-
-	public RedoController getRedoController() {
-		return redoController;
-	}
-
-	public void setRedoController(RedoController redoController) {
-		this.redoController = redoController;
-	}
-
-	public SaveController getSaveController() {
-		return saveController;
-	}
-
-	public void setSaveController(SaveController saveController) {
-		this.saveController = saveController;
-	}
-
-	public RestoreController getRestoreController() {
-		return restoreController;
-	}
-
-	public void setRestoreController(RestoreController restoreController) {
-		this.restoreController = restoreController;
-	}
-
-	public ExitGameController getExitGameController() {
-		return exitGameController;
-	}
-
-	public void setExitGameController(ExitGameController exitGameController) {
-		this.exitGameController = exitGameController;
-	}
-
-	public ExitAppController getExitAppController() {
-		return exitAppController;
-	}
-
-	public void setExitAppController(ExitAppController exitAppController) {
-		this.exitAppController = exitAppController;
+	@Override
+	public void accept(OperationControllerVisitor operationControllerVisitor) {
+		operationControllerVisitor.visit(this);		
 	}
 }

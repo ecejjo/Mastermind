@@ -1,5 +1,8 @@
 package MasterMind.Views.Menu;
 
+import MasterMind.Controllers.PlayController;
+import MasterMind.Model.State;
+
 class PlayCommand extends Command {
 	
 	protected PlayCommand() {
@@ -8,6 +11,6 @@ class PlayCommand extends Command {
 
 	@Override
 	public void execute() {
-		this.menuView.getPlayView().interact(menuController.getPlayController());
+		this.menuView.getPlayView().interact((PlayController) menuController.getController(State.PLAY));
 	}
 }

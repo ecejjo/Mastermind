@@ -1,5 +1,8 @@
 package MasterMind.Views.Menu;
 
+import MasterMind.Controllers.ExitAppController;
+import MasterMind.Model.State;
+
 class ExitAppCommand extends Command {
 		
 	protected ExitAppCommand() {
@@ -8,6 +11,6 @@ class ExitAppCommand extends Command {
 
 	@Override
 	public void execute() {
-		this.menuView.getExitAppView().interact(menuController.getExitAppController());
+		this.menuView.getExitAppView().interact((ExitAppController) menuController.getController(State.EXIT_APP));
 	}
 }
