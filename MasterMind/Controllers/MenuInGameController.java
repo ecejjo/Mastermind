@@ -7,11 +7,11 @@ public class MenuInGameController extends MenuController {
 	
 	public MenuInGameController(GameInterface game) {
 		super(game);
-		this.addController(State.PLAY, new PlayController(game));
-		this.addController(State.UNDO, new UndoController(game));
-		this.addController(State.REDO, new RedoController(game));
-		this.addController(State.SAVE, new SaveController(game, "JSON"));
-		this.addController(State.EXIT_GAME, new ExitGameController(game));
+		this.put(State.PLAY, new PlayController(game));
+		this.put(State.UNDO, new UndoController(game));
+		this.put(State.REDO, new RedoController(game));
+		this.put(State.SAVE, new SaveController(game, "JSON"));
+		this.put(State.EXIT_GAME, new ExitGameController(game));
 	}
 	
 	@Override

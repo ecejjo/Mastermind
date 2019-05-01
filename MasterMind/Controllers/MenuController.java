@@ -1,25 +1,22 @@
 package MasterMind.Controllers;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
 public class MenuController extends OperationController {
 	
-	private List<Controller> controllersList;
+	private Map<State, Controller> controllersList;
 
 	public MenuController(GameInterface game) {
 		super(game);
-		controllersList = new ArrayList<Controller>();
+		this.controllersList = new HashMap<State, Controller>();
 	}
 	
-	public void addController(State menuInGame, Controller controller) {
-		for (int i = controllersList.size(); i < menuInGame.getValue(); i++) {
-			controllersList.add(i, controller);
-		}
-		controllersList.add(menuInGame.getValue(), controller);
+	public void put(State state, Controller controller) {
+		this.controllersList.put(state, controller);		
 	}
 
 	public boolean moreTries() {
@@ -39,7 +36,7 @@ public class MenuController extends OperationController {
 	}
 	
 	public Controller getController(State state) {
-		return this.controllersList.get(state.getValue());
+		return this.controllersList.get(state);
 	}
 
 	@Override

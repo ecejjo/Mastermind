@@ -2,10 +2,10 @@
   "state": "MENU_IN_GAME",
   "secretCombination": {
     "colors": [
-      "PINK",
+      "BLACK",
       "YELLOW",
-      "PINK",
-      "GREEN"
+      "GREEN",
+      "WHITE"
     ]
   },
   "proposedCombinations": [
@@ -13,15 +13,15 @@
       "result": {
         "success": [
           "BLACK",
-          "BLACK",
-          null,
+          "WHITE",
+          "WHITE",
           null
         ]
       },
       "colors": [
-        "PINK",
-        "PINK",
-        "PINK",
+        "BLACK",
+        "GREEN",
+        "YELLOW",
         "PINK"
       ]
     },
@@ -29,16 +29,16 @@
       "result": {
         "success": [
           "BLACK",
-          "BLACK",
-          "BLACK",
-          "BLACK"
+          null,
+          null,
+          null
         ]
       },
       "colors": [
-        "PINK",
-        "YELLOW",
-        "PINK",
-        "GREEN"
+        "BLACK",
+        "BLACK",
+        "BLACK",
+        "BLACK"
       ]
     },
     null,
@@ -53,10 +53,10 @@
           "state": "MENU_IN_GAME",
           "secretCombination": {
             "colors": [
-              "PINK",
+              "BLACK",
               "YELLOW",
-              "PINK",
-              "GREEN"
+              "GREEN",
+              "WHITE"
             ]
           },
           "proposedCombinations": [
@@ -75,10 +75,10 @@
           "state": "MENU_IN_GAME",
           "secretCombination": {
             "colors": [
-              "PINK",
+              "BLACK",
               "YELLOW",
-              "PINK",
-              "GREEN"
+              "GREEN",
+              "WHITE"
             ]
           },
           "proposedCombinations": [
@@ -86,15 +86,15 @@
               "result": {
                 "success": [
                   "BLACK",
-                  "BLACK",
-                  null,
+                  "WHITE",
+                  "WHITE",
                   null
                 ]
               },
               "colors": [
-                "PINK",
-                "PINK",
-                "PINK",
+                "BLACK",
+                "GREEN",
+                "YELLOW",
                 "PINK"
               ]
             },
@@ -112,10 +112,10 @@
           "state": "MENU_IN_GAME",
           "secretCombination": {
             "colors": [
-              "PINK",
+              "BLACK",
               "YELLOW",
-              "PINK",
-              "GREEN"
+              "GREEN",
+              "WHITE"
             ]
           },
           "proposedCombinations": [
@@ -123,15 +123,15 @@
               "result": {
                 "success": [
                   "BLACK",
-                  "BLACK",
-                  null,
+                  "WHITE",
+                  "WHITE",
                   null
                 ]
               },
               "colors": [
-                "PINK",
-                "PINK",
-                "PINK",
+                "BLACK",
+                "GREEN",
+                "YELLOW",
                 "PINK"
               ]
             },
@@ -139,16 +139,16 @@
               "result": {
                 "success": [
                   "BLACK",
-                  "BLACK",
-                  "BLACK",
-                  "BLACK"
+                  null,
+                  null,
+                  null
                 ]
               },
               "colors": [
-                "PINK",
-                "YELLOW",
-                "PINK",
-                "GREEN"
+                "BLACK",
+                "BLACK",
+                "BLACK",
+                "BLACK"
               ]
             },
             null,

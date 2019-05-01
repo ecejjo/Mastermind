@@ -12,9 +12,9 @@ public class Logic {
 	public Logic() {
 		game = new GameLocal();
 		menuController = new MenuController(game);
-		menuController.addController(State.MENU_IN_GAME, new MenuInGameController(game));
-		menuController.addController(State.MENU_NOT_IN_GAME, new MenuNotInGameController(game));
-		menuController.addController(State.EXIT, null);
+		menuController.put(State.MENU_IN_GAME, new MenuInGameController(game));
+		menuController.put(State.MENU_NOT_IN_GAME, new MenuNotInGameController(game));
+		menuController.put(State.EXIT, null);
 	}
 
 	public OperationController getController() {
