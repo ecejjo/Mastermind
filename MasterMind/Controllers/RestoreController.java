@@ -6,9 +6,9 @@ public class RestoreController extends Controller {
 	
     private RestoreControllerImpl impl;
 
-	public RestoreController(GameInterface game, String format) {
+	public RestoreController(GameInterface game, FileFormat fileFormat) {
 		super(game);
-        if (format.equals("JSON")) {
+        if (fileFormat == FileFormat.JSON) {
             impl = new RestoreJsonController(game);
         } else {
             impl = new RestoreBinaryController(game);

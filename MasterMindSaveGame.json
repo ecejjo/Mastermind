@@ -2,10 +2,10 @@
   "state": "IN_GAME",
   "secretCombination": {
     "colors": [
-      "RED",
+      "BLACK",
+      "PINK",
       "YELLOW",
-      "RED",
-      "GREEN"
+      "BLACK"
     ]
   },
   "proposedCombinations": [
@@ -19,10 +19,10 @@
         ]
       },
       "colors": [
-        "RED",
-        "GREEN",
-        "YELLOW",
-        "WHITE"
+        "BLACK",
+        "BLACK",
+        "WHITE",
+        "PINK"
       ]
     },
     null,
@@ -38,10 +38,10 @@
           "state": "IN_GAME",
           "secretCombination": {
             "colors": [
-              "RED",
+              "BLACK",
+              "PINK",
               "YELLOW",
-              "RED",
-              "GREEN"
+              "BLACK"
             ]
           },
           "proposedCombinations": [
@@ -60,10 +60,10 @@
           "state": "IN_GAME",
           "secretCombination": {
             "colors": [
-              "RED",
+              "BLACK",
+              "PINK",
               "YELLOW",
-              "RED",
-              "GREEN"
+              "BLACK"
             ]
           },
           "proposedCombinations": [
@@ -77,10 +77,10 @@
                 ]
               },
               "colors": [
-                "RED",
-                "GREEN",
-                "YELLOW",
-                "WHITE"
+                "BLACK",
+                "BLACK",
+                "WHITE",
+                "PINK"
               ]
             },
             null,

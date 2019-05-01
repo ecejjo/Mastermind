@@ -7,7 +7,7 @@ public class MenuNotInGameController extends MenuController {
 	public MenuNotInGameController(GameInterface game) {
 		super(game);
 		this.put(ControllerEnum.NEW_GAME, new NewGameController(game));
-		this.put(ControllerEnum.RESTORE, new RestoreController(game, "JSON"));
+		this.put(ControllerEnum.RESTORE, new RestoreController(game, FileFormat.JSON));
 		this.put(ControllerEnum.EXIT_APP, new ExitAppController(game));
 	}
 	
