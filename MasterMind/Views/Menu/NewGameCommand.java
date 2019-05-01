@@ -1,7 +1,7 @@
 package MasterMind.Views.Menu;
 
+import MasterMind.Controllers.ControllerEnum;
 import MasterMind.Controllers.NewGameController;
-import MasterMind.Model.State;
 
 class NewGameCommand extends Command {
 	
@@ -11,6 +11,6 @@ class NewGameCommand extends Command {
 
 	@Override
 	public void execute() {
-		this.menuView.getStartView().interact((NewGameController) menuController.getController(State.NEW_GAME));
+		this.menuView.getStartView().interact((NewGameController) menuController.getController(ControllerEnum.NEW_GAME));
 	}
 }

@@ -1,7 +1,7 @@
 package MasterMind.Views.Menu;
 
+import MasterMind.Controllers.ControllerEnum;
 import MasterMind.Controllers.SaveController;
-import MasterMind.Model.State;
 
 class SaveGameCommand extends Command {
 	
@@ -11,6 +11,6 @@ class SaveGameCommand extends Command {
 
 	@Override
 	public void execute() {
-		this.menuView.getSaveView().interact((SaveController) menuController.getController(State.SAVE));
+		this.menuView.getSaveView().interact((SaveController) menuController.getController(ControllerEnum.SAVE));
 	}
 }

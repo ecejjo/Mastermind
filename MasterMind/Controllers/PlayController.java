@@ -28,6 +28,6 @@ public class PlayController extends Controller {
 	}
 	
 	public void done() {
-		this.game.setState(State.MENU_IN_GAME);
+		this.game.setState(State.IN_GAME);
 	}
 }

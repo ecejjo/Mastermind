@@ -1,7 +1,7 @@
 package MasterMind.Views.Menu;
 
+import MasterMind.Controllers.ControllerEnum;
 import MasterMind.Controllers.UndoController;
-import MasterMind.Model.State;
 
 class UndoCommand extends Command {
 	
@@ -11,6 +11,6 @@ class UndoCommand extends Command {
 
 	@Override
 	public void execute() {
-		this.menuView.getUndoView().interact((UndoController) menuController.getController(State.UNDO));
+		this.menuView.getUndoView().interact((UndoController) menuController.getController(ControllerEnum.UNDO));
 	}
 }

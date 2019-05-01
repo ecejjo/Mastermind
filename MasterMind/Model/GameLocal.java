@@ -77,7 +77,7 @@ public class GameLocal implements GameInterface, Serializable {
 	}
 
 	public void newGame() {
-		state = State.MENU_IN_GAME;
+		state = State.IN_GAME;
     	secretCombination = new SecretCombination();
     	proposedCombinations = new ProposedCombination[MAX_TRIES];
     	tries = 0;
@@ -86,7 +86,7 @@ public class GameLocal implements GameInterface, Serializable {
 	
 	public void clear() {
     	tries = 0;
-		state = State.MENU_NOT_IN_GAME;
+		state = State.NOT_IN_GAME;
 		secretCombination = null;
 		proposedCombinations = new ProposedCombination[MAX_TRIES];
 		careTaker = new CareTaker();

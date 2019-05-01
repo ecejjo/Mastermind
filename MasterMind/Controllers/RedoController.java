@@ -10,7 +10,7 @@ public class RedoController extends Controller {
 	}
 	
 	public boolean redo() {
-		this.game.setState(State.MENU_IN_GAME);
+		this.game.setState(State.IN_GAME);
 		if (game.getCareTaker().nextExists()) {
 			this.restoreFromMemento(game.getCareTaker().getNext());
 			return true;

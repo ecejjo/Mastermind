@@ -8,15 +8,31 @@ import MasterMind.Model.State;
 
 public class MenuController extends OperationController {
 	
-	private Map<State, Controller> controllersList;
+	private Map<ControllerEnum, Controller> controllersList;
 
 	public MenuController(GameInterface game) {
 		super(game);
-		this.controllersList = new HashMap<State, Controller>();
+		this.controllersList = new HashMap<ControllerEnum, Controller>();
 	}
 	
-	public void put(State state, Controller controller) {
-		this.controllersList.put(state, controller);		
+	public void put(ControllerEnum controllerEnum, Controller controller) {
+		this.controllersList.put(controllerEnum, controller);		
+	}
+
+	public Controller getController(ControllerEnum controllerEnum) {
+		return this.controllersList.get(controllerEnum);
+	}
+
+	public Controller getController(State state) {
+		switch (state) {
+		case IN_GAME:
+			return this.controllersList.get(ControllerEnum.MENU_IN_GAME);
+		case NOT_IN_GAME:
+			return this.controllersList.get(ControllerEnum.MENU_NOT_IN_GAME);
+		default:
+			break;
+		}
+		return null;
 	}
 
 	public boolean moreTries() {
@@ -35,10 +51,6 @@ public class MenuController extends OperationController {
 		return this.game.getCareTaker().nextExists();
 	}
 	
-	public Controller getController(State state) {
-		return this.controllersList.get(state);
-	}
-
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);		

@@ -1,7 +1,7 @@
 package MasterMind.Views.Menu;
 
+import MasterMind.Controllers.ControllerEnum;
 import MasterMind.Controllers.RedoController;
-import MasterMind.Model.State;
 
 class RedoCommand extends Command {
 	
@@ -11,6 +11,6 @@ class RedoCommand extends Command {
 
 	@Override
 	public void execute() {
-		this.menuView.getRedoView().interact((RedoController) menuController.getController(State.REDO));
+		this.menuView.getRedoView().interact((RedoController) menuController.getController(ControllerEnum.REDO));
 	}
 }

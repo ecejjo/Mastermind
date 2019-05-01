@@ -14,7 +14,7 @@ public class ExitAppController extends Controller {
 			this.game.setState(State.EXIT);
 			return true;
 		} else {
-			this.game.setState(State.MENU_NOT_IN_GAME);
+			this.game.setState(State.NOT_IN_GAME);
 			return false;
 		}		
 	}
