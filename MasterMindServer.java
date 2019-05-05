@@ -1,4 +1,7 @@
-package MasterMind.Distributed;
+
+
+import MasterMind.Distributed.GameServer;
+
 public class MasterMindServer {
 	
 	private GameServer gameServer;

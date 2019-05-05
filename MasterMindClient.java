@@ -1,6 +1,7 @@
-package MasterMind.Distributed;
+
 
 import MasterMind.Controllers.OperationController;
+import MasterMind.Distributed.LogicClient;
 import MasterMind.Views.MasterMindView;
 
 public class MasterMindClient {
