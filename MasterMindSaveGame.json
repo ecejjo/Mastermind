@@ -4,7 +4,7 @@
     "colors": [
       "GREEN",
       "GREEN",
-      "BLACK",
+      "PINK",
       "PINK"
     ]
   },
@@ -12,17 +12,17 @@
     {
       "result": {
         "success": [
-          null,
-          null,
-          null,
+          "BLACK",
+          "BLACK",
+          "BLACK",
           null
         ]
       },
       "colors": [
-        "RED",
-        "RED",
-        "RED",
-        "RED"
+        "GREEN",
+        "GREEN",
+        "GREEN",
+        "PINK"
       ]
     },
     {
@@ -37,7 +37,7 @@
       "colors": [
         "GREEN",
         "GREEN",
-        "BLACK",
+        "PINK",
         "PINK"
       ]
     },

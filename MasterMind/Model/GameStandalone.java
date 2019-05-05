@@ -41,11 +41,16 @@ public class GameStandalone implements GameInterface, Serializable {
 	public void copyGame(GameStandalone game) {
 		this.state = game.state;
 		
-		if (this.secretCombination == null) {
-			this.secretCombination = new SecretCombination();
+		if (game.secretCombination == null) {
+			this.secretCombination = null;
 		}
-		
-		this.secretCombination.copy(game.secretCombination);
+		else
+		{
+			if (this.secretCombination == null) {
+				this.secretCombination = new SecretCombination();
+			}
+			this.secretCombination.copy(game.secretCombination);
+		}
 		
 		this.proposedCombinations = new ProposedCombination[MAX_TRIES];
 		for (int i = 0; i < game.proposedCombinations.length; i++) {
