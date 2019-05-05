@@ -2,9 +2,9 @@ package MasterMind.Distributed;
 
 import MasterMind.Model.GameStandalone;
 
-public class SetGameDispatcher extends GameServerDispatcher {
+public class GameServerSetGame extends GameServerDispatcher {
 
-	public SetGameDispatcher(GameStandalone game, TCPIP tcpip) {
+	public GameServerSetGame(GameStandalone game, TCPIP tcpip) {
 		super(game, tcpip);
 	}
 

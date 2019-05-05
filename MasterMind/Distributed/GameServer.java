@@ -18,8 +18,8 @@ public class GameServer {
 		this.tcpip = TCPIP.createServerSocket();
 		
 		this.gameServerDispatchersMap = new HashMap<FrameType, GameServerDispatcher>();
-		this.gameServerDispatchersMap.put(FrameType.GET_GAME, new GetGameDispatcher(this.game, this.tcpip));
-		this.gameServerDispatchersMap.put(FrameType.SET_GAME, new SetGameDispatcher(this.game, this.tcpip));
+		this.gameServerDispatchersMap.put(FrameType.GET_GAME, new GameServerGetGame(this.game, this.tcpip));
+		this.gameServerDispatchersMap.put(FrameType.SET_GAME, new GameServerSetGame(this.game, this.tcpip));
 		this.gameServerDispatchersMap.put(FrameType.EXIT, new ExitGameDispatcher(this.game, this.tcpip));
 	}
 	
