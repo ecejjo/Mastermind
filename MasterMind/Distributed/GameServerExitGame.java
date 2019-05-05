@@ -2,9 +2,9 @@ package MasterMind.Distributed;
 
 import MasterMind.Model.GameStandalone;
 
-public class ExitGameDispatcher extends GameServerDispatcher {
+public class GameServerExitGame extends GameServerDispatcher {
 
-	public ExitGameDispatcher(GameStandalone game, TCPIP tcpip) {
+	public GameServerExitGame(GameStandalone game, TCPIP tcpip) {
 		super(game, tcpip);
 	}
 

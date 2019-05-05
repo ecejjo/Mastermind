@@ -20,7 +20,7 @@ public class GameServer {
 		this.gameServerDispatchersMap = new HashMap<FrameType, GameServerDispatcher>();
 		this.gameServerDispatchersMap.put(FrameType.GET_GAME, new GameServerGetGame(this.game, this.tcpip));
 		this.gameServerDispatchersMap.put(FrameType.SET_GAME, new GameServerSetGame(this.game, this.tcpip));
-		this.gameServerDispatchersMap.put(FrameType.EXIT, new ExitGameDispatcher(this.game, this.tcpip));
+		this.gameServerDispatchersMap.put(FrameType.EXIT, new GameServerExitGame(this.game, this.tcpip));
 	}
 	
 	public void serve() {

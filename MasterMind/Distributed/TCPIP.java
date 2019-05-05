@@ -89,8 +89,9 @@ public class TCPIP {
 			this.out.close();
 			this.socket.close();
 			if (this.serverSocket != null) {
-				this.serverSocket.close();				
+				this.serverSocket.close();
 			}
+			System.out.println("Server> Server socket closed.");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
