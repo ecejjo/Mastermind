@@ -11,7 +11,7 @@ public class PlayController extends Controller {
 	}	
 	
 	public void add(ProposedCombination proposedCombination) {
-		this.game.add(proposedCombination);
+		this.game.addProposedCombination(proposedCombination);
 		this.game.calculateResult();
 	}
 	

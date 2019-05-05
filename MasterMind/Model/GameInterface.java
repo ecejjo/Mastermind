@@ -3,6 +3,8 @@ package MasterMind.Model;
 import MasterMind.Controllers.CareTaker;
 
 public interface GameInterface {
+
+	GameInterface data();
 	
 	void newGame();
 
@@ -14,9 +16,9 @@ public interface GameInterface {
 
 	ProposedCombination[] getProposedCombinations();
 	
-	void add(ProposedCombination proposedCombination);
+	void addProposedCombination(ProposedCombination proposedCombination);
 
-	void copy(GameLocal savedState);
+	void copyGame(GameStandalone savedState);
 
 	CareTaker getCareTaker();
 

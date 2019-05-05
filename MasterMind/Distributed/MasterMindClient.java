@@ -1,21 +1,20 @@
+package MasterMind.Distributed;
 
-import MasterMind.Controllers.Logic;
-import MasterMind.Controllers.LogicStandalone;
 import MasterMind.Controllers.OperationController;
 import MasterMind.Views.MasterMindView;
 
-public class MasterMind {
+public class MasterMindClient {
 	
-	private Logic logic;
+	private LogicClient logic;
 	
 	private MasterMindView view;
 	
-	public MasterMind() {
-		logic = new LogicStandalone();
+	public MasterMindClient() {
+		logic = new LogicClient();
 		view = new MasterMindView();
 	}           
     
-    public void play() {    	
+    public void play() {
     	OperationController controller;
 		do {
 			controller = logic.getController();
@@ -26,6 +25,6 @@ public class MasterMind {
     }
         
     public static void main(String[] args) {
-        new MasterMind().play();
+        new MasterMindClient().play();
     }
 }

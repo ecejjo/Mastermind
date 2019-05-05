@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameStandalone;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
@@ -23,8 +23,8 @@ public class RestoreBinaryController implements RestoreControllerImpl {
 			FileInputStream fis = new FileInputStream(new File(filename + ".bin"));
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			
-			GameLocal restoredGame = (GameLocal) ois.readObject();
-			game.copy(restoredGame);
+			GameStandalone restoredGame = (GameStandalone) ois.readObject();
+			game.copyGame(restoredGame);
 			
 			ois.close();
 			fis.close();

@@ -1,7 +1,7 @@
 package MasterMind.Controllers;
 
 import MasterMind.Model.GameInterface;
-import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameStandalone;
 import MasterMind.Model.ProposedCombination;
 import MasterMind.Model.SecretCombination;
 
@@ -26,12 +26,12 @@ public abstract class Controller {
 	
 	public Memento saveToMemento() 
     {
-		GameLocal gameToSave = new GameLocal(game);
+		GameStandalone gameToSave = new GameStandalone(game);
         return new Memento(gameToSave); 
     }
 
     public void restoreFromMemento(Memento m) 
     {
-        game.copy(m.getSavedState());
+        game.copyGame(m.getSavedState());
     }
 }

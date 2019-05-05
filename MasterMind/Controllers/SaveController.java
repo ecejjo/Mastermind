@@ -9,9 +9,9 @@ public class SaveController extends Controller {
 	public SaveController(GameInterface game, FileFormat fileFormat) {
 		super(game);
         if (fileFormat == FileFormat.JSON) {
-            impl = new SaveJsonController(game);
+            impl = new SaveJsonController(game.data());
         } else {
-            impl = new SaveBinaryController(game);
+            impl = new SaveBinaryController(game.data());
         }
     }
 	

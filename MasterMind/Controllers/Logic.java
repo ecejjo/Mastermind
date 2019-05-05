@@ -1,15 +1,13 @@
 package MasterMind.Controllers;
 
-import MasterMind.Model.GameLocal;
 import MasterMind.Model.GameInterface;
 
-public class Logic {
+public abstract class Logic {
 
-	private GameInterface game;
+	protected GameInterface game;
 	private MenuController menuController;
 
-	public Logic() {
-		game = new GameLocal();
+	public void setMenuController(GameInterface game) {
 		menuController = new MenuController(game);
 		menuController.put(ControllerEnum.MENU_IN_GAME, new MenuInGameController(game));
 		menuController.put(ControllerEnum.MENU_NOT_IN_GAME, new MenuNotInGameController(game));

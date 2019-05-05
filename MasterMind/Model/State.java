@@ -11,6 +11,10 @@ public enum State {
         value = newValue;
     }
 	
+	public void setValue(int newValue) {
+		value = newValue;
+	}
+	
 	public int getValue() {
 		return value;
 	}

@@ -6,7 +6,7 @@ import java.io.Reader;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import MasterMind.Model.GameLocal;
+import MasterMind.Model.GameStandalone;
 import MasterMind.Model.GameInterface;
 import MasterMind.Model.State;
 
@@ -27,9 +27,9 @@ public class RestoreJsonController implements RestoreControllerImpl {
 			Gson gson = builder.create();
 			
 			Reader reader = new FileReader(filename + ".json");
-			GameLocal restoredGame = gson.fromJson(reader, GameLocal.class);  
+			GameStandalone restoredGame = gson.fromJson(reader, GameStandalone.class);  
 
-			game.copy(restoredGame);
+			game.copyGame(restoredGame);
 			return true;
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");

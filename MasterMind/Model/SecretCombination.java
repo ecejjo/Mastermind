@@ -20,8 +20,10 @@ public class SecretCombination extends Combination {
 	}
 
 	public void copy(SecretCombination secretCombination) {
-		for (int i = 0; i < COMBINATION_LENGTH; i++) {
-			this.colors[i] = secretCombination.colors[i];
-		}		
+		if (secretCombination != null) {
+			for (int i = 0; i < COMBINATION_LENGTH; i++) {
+				this.colors[i] = secretCombination.colors[i];
+			}
+		}
 	}
 }

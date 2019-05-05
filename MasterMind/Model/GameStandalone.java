@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import MasterMind.Controllers.CareTaker;
 
-public class GameLocal implements GameInterface, Serializable {
+public class GameStandalone implements GameInterface, Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -20,11 +20,11 @@ public class GameLocal implements GameInterface, Serializable {
 	
 	public CareTaker careTaker;
 		
-	public GameLocal() {
+	public GameStandalone() {
 		this.clear();
 	}
 	
-	public GameLocal(GameInterface game) {
+	public GameStandalone(GameInterface game) {
 		this.state = game.getState();
 		this.secretCombination = new SecretCombination(game.getSecretCombination());
 
@@ -38,7 +38,7 @@ public class GameLocal implements GameInterface, Serializable {
 		this.tries = game.getTries();
 	}
 	
-	public void copy(GameLocal game) {
+	public void copyGame(GameStandalone game) {
 		this.state = game.state;
 		
 		if (this.secretCombination == null) {
@@ -119,7 +119,7 @@ public class GameLocal implements GameInterface, Serializable {
 		return tries;
 	}
 
-	public void add(ProposedCombination proposedCombination) {
+	public void addProposedCombination(ProposedCombination proposedCombination) {
 		this.proposedCombinations[tries] = proposedCombination;
 		tries ++;
 	}
@@ -130,5 +130,10 @@ public class GameLocal implements GameInterface, Serializable {
 	
 	public boolean inGame() {
 		return this.secretCombination != null;
+	}
+
+	@Override
+	public GameInterface data() {
+		return this;
 	}
 }
