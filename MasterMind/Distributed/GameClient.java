@@ -54,6 +54,12 @@ public class GameClient implements GameInterface {
 	public void setState(State state) {
 		game.setState(state);
 		this.setRemoteGame();
+		
+		if (state == State.EXIT) {
+			this.tcpip.send(FrameType.EXIT.name());
+			this.tcpip.close();
+			this.tcpip = null;
+		}
 	}
 	
 	public CareTaker getCareTaker() {

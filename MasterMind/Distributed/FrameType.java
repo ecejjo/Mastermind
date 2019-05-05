@@ -3,7 +3,7 @@ package MasterMind.Distributed;
 public enum FrameType { 
 	GET_GAME, 
 	SET_GAME,
-	CLOSE;
+	EXIT;
 
 	public static FrameType parser(String string) {
 		for(FrameType frameType : FrameType.values()) {

@@ -9,6 +9,9 @@ import java.net.Socket;
 
 public class TCPIP {
 	
+	static String host = "localhost";
+    static int portNumber = 7070;
+	
 	private ServerSocket serverSocket;
 
 	private Socket socket;
@@ -33,8 +36,9 @@ public class TCPIP {
 
 	public static TCPIP createClientSocket() {
 		try {
-			Socket socket = new Socket("localhost", 2020);
-			System.out.println("Cliente> Establecida conexion");
+			System.out.println("Client> Trying to connect in: " + host + ":" + portNumber + " ...");
+			Socket socket = new Socket(host, portNumber);
+			System.out.println("Client> Connection stablished.");
 			PrintWriter out = new PrintWriter(socket.getOutputStream());
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			return new TCPIP(socket, out, in);
@@ -47,8 +51,8 @@ public class TCPIP {
 
 	public static TCPIP createServerSocket() {
 		try {
-			ServerSocket serverSocket = new ServerSocket(2020);
-			System.out.println("Server> Waiting for connection ...");
+			ServerSocket serverSocket = new ServerSocket(portNumber);
+			System.out.println("Server> Waiting for connection in: " + host + ":" + portNumber + " ...");
 			Socket socket = serverSocket.accept();
 			System.out.println("Server> Connection established from: " + socket.getInetAddress().getHostAddress() + ":"
 					+ socket.getPort());
@@ -80,7 +84,7 @@ public class TCPIP {
 
 	public void close() {
 		try {
-			this.send(FrameType.CLOSE.name());
+			this.send(FrameType.EXIT.name());
 			this.in.close();
 			this.out.close();
 			this.socket.close();

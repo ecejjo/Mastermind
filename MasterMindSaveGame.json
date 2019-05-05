@@ -2,17 +2,17 @@
   "state": "IN_GAME",
   "secretCombination": {
     "colors": [
-      "RED",
-      "BLACK",
       "GREEN",
-      "YELLOW"
+      "GREEN",
+      "BLACK",
+      "PINK"
     ]
   },
   "proposedCombinations": [
     {
       "result": {
         "success": [
-          "BLACK",
+          null,
           null,
           null,
           null
@@ -25,12 +25,27 @@
         "RED"
       ]
     },
-    null,
+    {
+      "result": {
+        "success": [
+          "BLACK",
+          "BLACK",
+          "BLACK",
+          "BLACK"
+        ]
+      },
+      "colors": [
+        "GREEN",
+        "GREEN",
+        "BLACK",
+        "PINK"
+      ]
+    },
     null,
     null,
     null
   ],
-  "tries": 1,
+  "tries": 2,
   "careTaker": {
     "savedGames": [],
     "current": -1
